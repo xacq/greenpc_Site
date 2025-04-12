@@ -56,8 +56,19 @@ include_once './assets/includes/head-blog.php'; // Include the head file for the
               <img src="assets/img/blog/ciberseguridad.png" class="card-img-top" alt="Imagen Post 2">
               <div class="card-body d-flex flex-column text-end">
                 <h4 class="card-title color-primario text-center"><strong>Ciberseguridad <br> en la era de la IA</strong></h4>
-                <p class="card-text color-secundario">Un análisis profundo sobre cómo proteger tus datos y prevenir ataques cibernéticos en un mundo interconectado...</p>
+                <p class="card-text color-secundario">La nueva plataforma de Google para crear apps con IA «en segundos» y sin conocimientos técnicos...</p>
                 <a href="./blogs/ciber-v1.php" class="link-primario">Leer más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+          <div class="card border-dark bg-dark">
+              <img src="assets/img/blog/firebase.png" class="card-img-top" alt="Imagen Post 2">
+              <div class="card-body d-flex flex-column text-end">
+                <h4 class="card-title color-primario text-center"><strong>Firebase Studio <br> el IDE del Futuro</strong></h4>
+                <p class="card-text color-secundario">Un análisis profundo sobre cómo proteger tus datos y prevenir ataques cibernéticos en un mundo interconectado...</p>
+                <a href="./blogs/fireide-v1.php" class="link-primario">Leer más</a>
               </div>
             </div>
           </div>

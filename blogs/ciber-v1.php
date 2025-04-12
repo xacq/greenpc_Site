@@ -1,7 +1,14 @@
 <?php
 
-include_once '../assets/includes/head-es-blog.php';
+// Definición de variables para el artículo
+$articleId = 'ciber';
+$articleTitle = 'Ciberseguridad - En La Era De La Inteligencia Artificial';
+$audioFile = '../audio/articles/' . $articleId . '.mp3';
+$audioTitle = $articleTitle;
+$audioImage = '../assets/img/audio.jpg'; // Imagen por defecto si no se proporciona una
+$audioDuration = '3.25'; // Podrías calcular esto con PHP o JS
 
+include_once '../assets/includes/head-es-blog.php';
 ?>
 
   <title>Ciberseguridad en la era de la IA - Green PC</title>
@@ -21,7 +28,6 @@ include_once '../assets/includes/head-es-blog.php';
             <h2 class="color-primario">Ciberseguridad</h2>
           </div>
         </div>
-
         <p data-aos="fade-up" data-aos-delay="200">En La Era De La Inteligencia Artificial</p>
       </div>
     </section>
@@ -46,6 +52,9 @@ include_once '../assets/includes/head-es-blog.php';
                             <span class="badge bg-info">Amenazas Digitales</span>
                         </div>
                     </header>
+
+                    <!-- Reproductor de audio -->
+                    <?php include '../assets/includes/player.php'; ?>
 
                     <!-- Introducción con card -->
                     <section class="mb-3" id="introduccion">
@@ -315,21 +324,8 @@ include_once '../assets/includes/head-es-blog.php';
                     </section>
 
                     <!-- Compartir en redes sociales -->
-                    <section class="mb-3">
-                        <div class="card border-0 bg-light">
-                            <div class="card-body text-center">
-                                <h3 class="h5 mb-3">¿Te resultó útil este artículo?</h3>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <button class="btn btn-primario rounded-pill">
-                                        <i class="bi bi-hand-thumbs-up me-2"></i>Me gusta
-                                    </button>
-                                    <button class="btn btn-secundario rounded-pill">
-                                        <i class="bi bi-share me-2"></i>Compartir
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <?php include '../assets/includes/like-share.php'; ?>
+                    
                 </article>
             </div>
 
