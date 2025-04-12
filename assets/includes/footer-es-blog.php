@@ -84,4 +84,88 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del DOM
+    const audioPlayer = new Audio('<?= htmlspecialchars($audioFile) ?>');
+    const playPauseBtn = document.querySelector('.btn-audio-play-pause');
+    const progressBar = document.querySelector('.progress-bar-audio');
+    const progressContainer = document.querySelector('.progress-container');
+    const currentTimeEl = document.querySelector('.audio-current-time');
+    const durationEl = document.querySelector('.audio-duration');
+    
+    // Verificar si los elementos existen
+    if (!audioPlayer || !playPauseBtn || !progressBar || !progressContainer) {
+        console.error('Error: Elementos del reproductor no encontrados');
+        return;
+    }
+    
+    // Formatear tiempo a MM:SS
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+    
+    // Actualizar barra de progreso y tiempo
+    function updateProgress() {
+        if (audioPlayer.duration && !isNaN(audioPlayer.duration)) {
+            const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+            currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+        }
+    }
+    
+    // Cargar metadatos del audio
+    audioPlayer.addEventListener('loadedmetadata', function() {
+        if (audioPlayer.duration && !isNaN(audioPlayer.duration)) {
+            durationEl.textContent = formatTime(audioPlayer.duration);
+        }
+    });
+    
+    // Manejar errores
+    audioPlayer.addEventListener('error', function() {
+        console.error('Error de audio:', audioPlayer.error);
+        alert('Error al cargar el audio. Verifica la consola para más detalles.');
+    });
+    
+    // Control Play/Pause
+    function togglePlayPause() {
+        if (audioPlayer.paused) {
+            audioPlayer.play()
+                .then(() => {
+                    playPauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+                })
+                .catch(error => {
+                    console.error('Error al reproducir:', error);
+                    alert('Error al iniciar la reproducción: ' + error.message);
+                });
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+        }
+    }
+    
+    // Barra de progreso clickeable
+    progressContainer.addEventListener('click', function(e) {
+        if (!audioPlayer.duration || isNaN(audioPlayer.duration)) return;
+        
+        const rect = this.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / this.offsetWidth;
+        audioPlayer.currentTime = pos * audioPlayer.duration;
+    });
+    
+    // Actualización durante la reproducción
+    audioPlayer.addEventListener('timeupdate', updateProgress);
+    
+    // Cambiar icono al finalizar
+    audioPlayer.addEventListener('ended', function() {
+        playPauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+    });
+    
+    // Asignar evento al botón
+    playPauseBtn.addEventListener('click', togglePlayPause);
+});
+</script>
+
 </body>

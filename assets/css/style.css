@@ -108,3 +108,53 @@ body {
 .defense-card {
     border-left: 4px solid #28a745;
 }
+
+/* Estilos para el reproductor */
+.btn-audio-play {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.progress-bar {
+    transition: width 0.1s linear;
+}
+
+.btn-audio-play-pause {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto hover para los botones */
+.btn-audio-backward:hover, 
+.btn-audio-forward:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para velocidad activa */
+.dropdown-item.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .audio-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .audio-time {
+        order: -1;
+        width: 100%;
+        justify-content: space-between;
+    }
+}

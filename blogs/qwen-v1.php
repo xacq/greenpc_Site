@@ -1,4 +1,13 @@
 <?php
+
+// Definición de variables para el artículo
+$articleId = 'qwen';
+$articleTitle = 'QWEN - La Revolución China en IA';
+$audioFile = '../audio/articles/' . $articleId . '.mp3';
+$audioTitle = $articleTitle;
+$audioImage = '../assets/img/audio.jpg'; // Imagen por defecto si no se proporciona una
+$audioDuration = '3.25'; // Podrías calcular esto con PHP o JS
+
     include '../assets/includes/head-es-blog.php';
 ?>
 
@@ -9,20 +18,20 @@ include_once '../assets/includes/header-es-blog.php';
 ?>
 
 
-  <section id="hero" class="hero section dark-background">
-    <img src="../assets/img/blog/qwen-bg.jpg" alt="" data-aos="fade-in">
-      <div class="container text-center">
-      <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-xl-6 col-lg-8">
-            <h2 class="color-primario">Q W E N</h2>
-          </div>
-        </div>
+    <section id="hero" class="hero section dark-background">
+        <img src="../assets/img/blog/qwen-bg.jpg" alt="" data-aos="fade-in">
+        <div class="container text-center">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-xl-6 col-lg-8">
+                <h2 class="color-primario">Q W E N</h2>
+            </div>
+            </div>
 
-        <p data-aos="fade-up" data-aos-delay="200">La Revolución China en IA</p>
-      </div>
+            <p data-aos="fade-up" data-aos-delay="200">La Revolución China en IA</p>
+        </div>
     </section>
 
-    <section>
+
     <div class="container py-5">
         <div class="row">
             <!-- Contenido principal -->
@@ -42,6 +51,11 @@ include_once '../assets/includes/header-es-blog.php';
                             <span class="badge bg-info">Tecnología China</span>
                         </div>
                     </header>
+
+
+                    <!-- Reproductor de audio -->
+                <?php include '../assets/includes/player.php'; ?>
+
                     <!-- Introducción con card -->
                     <section class="mb-3" id="introduccion">
                         <div class="card border-0 shadow-sm">
@@ -289,21 +303,8 @@ include_once '../assets/includes/header-es-blog.php';
                     </section>
 
                     <!-- Compartir en redes sociales -->
-                    <section class="mb-5">
-                        <div class="card border-0 bg-light">
-                            <div class="card-body text-center">
-                                <h3 class="h5 mb-3">¿Te resultó útil este artículo?</h3>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <button class="btn btn-primario rounded-pill">
-                                        <i class="bi bi-hand-thumbs-up me-2"></i>Me gusta
-                                    </button>
-                                    <button class="btn btn-secundario rounded-pill">
-                                        <i class="bi bi-share me-2"></i>Compartir
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <?php include '../assets/includes/like-share.php'; ?>
+                    
                 </article>
             </div>
 
@@ -386,61 +387,6 @@ include_once '../assets/includes/header-es-blog.php';
   </main>
 
 
-
-
-
   <?php 
-
     include '../assets/includes/footer-es-blog.php';
-
 ?>
-
-
-<script>
-    // Barra de progreso de lectura
-    window.onscroll = function() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = scrolled + "%";
-    };
-
-    // Inicializar tooltips
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-
-    // Gráfico de rendimiento
-    if(document.getElementById('performanceChart')) {
-        var ctx = document.getElementById('performanceChart').getContext('2d');
-        var performanceChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Razonamiento', 'Codificación', 'Matemáticas', 'Comprensión', 'Creatividad'],
-                datasets: [{
-                    label: 'QWEN 2.5-Max',
-                    data: [92, 89, 85, 88, 82],
-                    backgroundColor: 'rgba(13, 110, 253, 0.7)',
-                    borderColor: 'rgba(13, 110, 253, 1)',
-                    borderWidth: 1
-                }, {
-                    label: 'Promedio del mercado',
-                    data: [78, 75, 72, 80, 70],
-                    backgroundColor: 'rgba(108, 117, 125, 0.7)',
-                    borderColor: 'rgba(108, 117, 125, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 100
-                    }
-                }
-            }
-        });
-    }
-</script>
