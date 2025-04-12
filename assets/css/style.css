@@ -1,0 +1,110 @@
+/* Definir variables en el selector :root */
+:root {
+    --color-primario: #3498db;
+    --color-primario-light: #97c1dd;
+    --color-secundario: #7f8c8d;
+}
+
+body {
+    font-family: Arial, sans-serif, Helvetica, sans-serif, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.color-primario {
+    color: var(--color-primario);
+}
+.color-secundario {
+    color: var(--color-secundario);
+}
+
+.btn-primario {
+    background-color: var(--color-primario);
+    color: white;
+    border-color: #3498db;
+}
+.btn-primario:hover {
+    background-color: white;
+    border-color: #2980b9;
+    color: var(--color-primario);
+}
+
+.btn-secundario {
+    background-color: var(--color-secundario);
+    color: white;
+    border-color: #7f8c8d;
+}
+.btn-secundario:hover {
+    background-color: white;
+    border-color: #7f8c8d;
+    color: var(--color-secundario);
+}
+
+.btn-blog {
+    background-color: var(--color-secundario);
+    color: white;
+    border-color: #7f8c8d;
+}
+.btn-blog:hover {
+    background-color: var(--color-primario );
+    border-color: #7f8c8d;
+    color: white;
+}
+  
+.link-primario {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+.link-primario:hover {
+    color: var(--color-secundario);
+    text-decoration: underline;
+}
+
+.hover-shadow {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-shadow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+}
+.text-primary {
+    color: var(--color-primario) !important;
+}
+.bg-primary {
+    background-color: var(--color-primario) !important;
+}
+.lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.article-img {
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+.sticky-sidebar {
+    position: sticky;
+    top: 20px;
+}
+.progress-container {
+    height: 5px;
+    background: var(--color-secundario-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.progress-bar {
+    height: 5px;
+    background: var(--color-primario);
+    width: 0%;
+}
+
+.threat-card {
+    border-left: 4px solid #dc3545;
+}
+.defense-card {
+    border-left: 4px solid #28a745;
+}

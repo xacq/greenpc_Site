@@ -1,0 +1,19 @@
+
+INSERT INTO `roles` (`id`, `nombre`) VALUES
+(1, 'Administrador'),
+(2, 'Auxiliar'),
+(3, 'Usuario');
+
+INSERT INTO `usuarios` (`id`, `nombre`, `email`, `cedula`, `password`, `rol_id`, `estado`, `perfil`, `fecha_registro`) VALUES
+(1, 'Administrador', 'info@greenpc.dev', '', '$2y$10$6DOg1gfXo6RFWuw6cci1n.uSGY5kYpJQfmHweYy7/JTKQZgE8rf1W', 1, 1, 0, '2024-09-23 17:38:39');
+
+
+
+
+
+
+
+
+
+
+
