@@ -3,10 +3,13 @@
 <div class="footer-top">
   <div class="container">
     <div class="row gy-4">
-      <div class="col-lg-6 col-md-6 footer-about text-center">
+      <div class="col-lg-12 col-md-12 footer-about text-center">
+        <img src="assets/img/logo.png" alt="" width="400px">
+      </div>
+      <div class="col-lg-12 col-md-12 footer-about text-center">
 
         <div class="footer-contact pt-3">
-          <p>Misicata</p>
+          <p>Misicata - Baguanchi</p>
           <p>Cuenca, Ecuador</p>
           <p class="mt-3"><strong>WhatsApp:</strong> <a href="https://wa.link/hczezg"><span>+593 998784470</span></a></p>
           <p><strong>Email:</strong> <a href="mailto:info@greenpc.dev"><span>info@greenpc.dev</span></a></p>
@@ -19,23 +22,13 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 footer-links text-center">
-        <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#"> Inicio</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#about"> Sobre Nosotros</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services"> Servicios</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#portfolio"> Portafolio</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#clients"> Tecnologías</a></li>
-        </ul>
-      </div>
-
     </div>
   </div>
 </div>
 
 <div class="copyright">
   <div class="container text-center">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">Green PC</strong> <span>Todos los derechos reservados</span></p>
+    <p>© <span>Copyright 2026</span> <strong class="px-1 sitename">Green PC</strong> <span>Todos los derechos reservados</span></p>
     <div class="credits">
       Diseñado por <a href="https://greenpc.dev/">Green PC</a>
     </div>
