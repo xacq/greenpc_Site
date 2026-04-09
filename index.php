@@ -232,48 +232,44 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-globe"></i>
+                <i class="bi bi-globe" style="font-size: 4rem;"></i>
               </div>
-              <a href="https://www.geeksforgeeks.org/top-frameworks-for-web-applications/" target="_blank" class="stretched-link">
+              <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalWebDev">
                 <h3>Web Dev</h3>
               </a>
-              <p>We build modern, responsive websites using advanced technologies for scalable and robust performance.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-ui-radios"></i>
+                <i class="bi bi-ui-radios" style="font-size: 4rem;"></i>
               </div>
-              <a href="https://www.interaction-design.org/literature/topics/ux-design" target="_blank" class="stretched-link">
+              <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalUXDesign">
                 <h3>UX Design</h3>
               </a>
-              <p>We craft intuitive designs that deliver seamless digital experiences tailored to your audience.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-journal-richtext"></i>
+                <i class="bi bi-journal-richtext" style="font-size: 4rem;"></i>
               </div>
-              <a href="https://www.perplexity.ai/" class="stretched-link" target="_blank" class="stretched-link">
+              <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalResearch">
                 <h3>Research</h3>
               </a>
-              <p>Our research uncovers actionable insights through precise data analysis to guide strategic decisions.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-robot"></i>
+                <i class="bi bi-robot" style="font-size: 4rem;"></i>
               </div>
-              <a href="https://www.make.com/en/blog/what-is-ai-automation" class="stretched-link" target="_blank">
+              <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalAutomation">
                 <h3>Automation</h3>
               </a>
-              <p>We implement automation solutions that streamline operations and boost overall efficiency.</p>
 
             </div>
           </div><!-- End Service Item -->
@@ -281,12 +277,11 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-phone"></i>
+                <i class="bi bi-phone" style="font-size: 4rem;"></i>
               </div>
-              <a href="https://www.pcmag.com/picks/best-android-apps" class="stretched-link" target="_blank">
+              <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalMobileApps">
                 <h3>Mobile Apps</h3>
               </a>
-              <p>We develop engaging mobile apps for iOS and Android, ensuring reliable performance and intuitive interfaces.</p>
 
             </div>
           </div><!-- End Service Item -->
@@ -294,12 +289,11 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item position-relative">
               <div class="icon">
-                <i class="bi bi-fingerprint"></i>
+                <i class="bi bi-fingerprint" style="font-size: 4rem;"></i>
               </div>
-              <a href="https://www.geeksforgeeks.org/what-is-cyber-security/" class="stretched-link" target="_blank">
+              <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalCybersecurity">
                 <h3>Cybersecurity</h3>
               </a>
-              <p>Our solutions provide scalability, security, and flexibility to empower your business against attacks.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -315,7 +309,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>PORTOFOLIO</h2>
+        <h2>PORTFOLIO</h2>
         <p>Check our Portfolio</p>
       </div><!-- End Section Title -->
 
@@ -352,13 +346,13 @@
               </div>
             </div><!-- End Portfolio Item -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-branding">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>AmbatoShop</h4>
-                <p>Laravel Web System </p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Ambatoshop Laravel Ecommerce System" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.ambatoshop.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg" ></i></a>
+                <h4>ElPeriodicoDeCeuta</h4>
+                <p>WordPress System </p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="elperiodicodeceuta.es WordPress System" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://www.elperiodicodeceuta.es/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg" ></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -376,20 +370,20 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>PortalPharma</h4>
-                <p>Wordpress Ecommerce Drug Store</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="PortalPharma Wordpress Ecommerce Drug Store" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://portalpharm.com.ec/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <h4>Masquealdia</h4>
+                <p>Wordpress System</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Masquealdia Newspaper Wordpress" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://masquealdia.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Sprint IT MX</h4>
-                <p>Web Dev + IT Teaching</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Sprint IT Courses and Development" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.itsprint.org/es_MX" title="More Details" class="details-link"  target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <h4>TeleCeuta</h4>
+                <p>Wordpress System</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="TeleCeuta Wordpress System" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://www.teleceuta.com" title="More Details" class="details-link"  target="_blank"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -430,6 +424,16 @@
                <p>Moodle Platform System with PHP and Tailwind UX</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-10.jpg" title="PUCE Moodle Platform System with PHP and Tailwind UX" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="https://auth-eva.puce.edu.ec:8443/login?service=https%3A%2F%2Fssoserver2.puce.edu.ec%2F"  target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-12.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Behance<h4>
+               <p>Folder with design works</p>
+                <a href="assets/img/masonry-portfolio/masonry-portfolio-12.jpg" title="Behance Folder with design works" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="https://www.behance.net/xaviercalvas"  target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
@@ -610,6 +614,397 @@
     </section><!-- /Call To Action Section -->
 
   </main>
+
+  <!-- ===== SERVICE MODALS (EN) ===== -->
+
+  <!-- Modal: Web Dev -->
+  <div class="modal fade" id="modalWebDev" tabindex="-1" aria-labelledby="modalWebDevLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content service-modal-content">
+        <div class="modal-header service-modal-header">
+          <div class="service-modal-icon"><i class="bi bi-globe" style="color: black; font-size: 40px;"></i></div>
+          <h5 class="modal-title" id="modalWebDevLabel" >Web Dev</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <!-- IMAGE PLACEHOLDER: replace src with your Web Dev image -->
+              <div class="service-modal-img-wrapper">
+                <img src="assets/img/services/webdev.jpg" alt="Web Development" class="img-fluid rounded service-modal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="service-modal-img-placeholder" style="display:none">
+                  <i class="bi bi-image"></i>
+                  <span>Image coming soon</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- <h6 class="service-modal-subtitle">What is Web Development?</h6> -->
+              <!-- <p>Web development is the process of building, programming, and maintaining websites and web applications that live on the internet. It encompasses everything from simple static pages to complex dynamic platforms.</p> -->
+              <h6 class="service-modal-subtitle mt-3">What we offer</h6>
+              <ul class="service-modal-list">
+                <li><i class="bi bi-check-circle-fill"></i> Custom websites and web applications</li>
+                <li><i class="bi bi-check-circle-fill"></i> Modern frameworks: React, Node.js, Laravel, Django, etc.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Fully responsive &amp; mobile-first design</li>
+                <li><i class="bi bi-check-circle-fill"></i> RESTful APIs &amp; backend integration</li>
+                <li><i class="bi bi-check-circle-fill"></i> Performance optimization &amp; SEO</li>
+                <li><i class="bi bi-check-circle-fill"></i> Ongoing maintenance &amp; support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer service-modal-footer">
+          
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Modal: Web Dev -->
+
+  <!-- Modal: UX Design -->
+  <div class="modal fade" id="modalUXDesign" tabindex="-1" aria-labelledby="modalUXDesignLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content service-modal-content">
+        <div class="modal-header service-modal-header">
+          <div class="service-modal-icon"><i class="bi bi-ui-radios" style="color: black; font-size: 40px;"></i></div>
+          <h5 class="modal-title" id="modalUXDesignLabel" style="color: black;font-size: 28px;">UX Design</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <!-- IMAGE PLACEHOLDER: replace src with your UX Design image -->
+              <div class="service-modal-img-wrapper">
+                <img src="assets/img/services/uxdesign.jpg" alt="UX Design" class="img-fluid rounded service-modal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="service-modal-img-placeholder" style="display:none">
+                  <i class="bi bi-image"></i>
+                  <span>Image coming soon</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- <h6 class="service-modal-subtitle">What is UX Design?</h6> -->
+              <!-- <p>User Experience (UX) Design focuses on creating products that deliver meaningful, relevant, and enjoyable experiences to users. It covers the entire journey of interaction between a person and a product.</p> -->
+              <h6 class="service-modal-subtitle mt-3">What we offer</h6>
+              <ul class="service-modal-list">
+                <li><i class="bi bi-check-circle-fill"></i> User research &amp; persona creation</li>
+                <li><i class="bi bi-check-circle-fill"></i> Wireframing &amp; prototyping</li>
+                <li><i class="bi bi-check-circle-fill"></i> UI design systems &amp; style guides</li>
+                <li><i class="bi bi-check-circle-fill"></i> Usability testing &amp; iteration</li>
+                <li><i class="bi bi-check-circle-fill"></i> Accessible &amp; inclusive design</li>
+                <li><i class="bi bi-check-circle-fill"></i> Design handoff for developers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer service-modal-footer">
+          
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Modal: UX Design -->
+
+  <!-- Modal: Research -->
+  <div class="modal fade" id="modalResearch" tabindex="-1" aria-labelledby="modalResearchLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content service-modal-content">
+        <div class="modal-header service-modal-header">
+          <div class="service-modal-icon"><i class="bi bi-journal-richtext" style="color: black; font-size: 40px;"></i></div>
+          <h5 class="modal-title" id="modalResearchLabel" style="color: black;font-size: 28px;">Research</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <!-- IMAGE PLACEHOLDER: replace src with your Research image -->
+              <div class="service-modal-img-wrapper">
+                <img src="assets/img/services/research.jpg" alt="Research" class="img-fluid rounded service-modal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="service-modal-img-placeholder" style="display:none">
+                  <i class="bi bi-image"></i>
+                  <span>Image coming soon</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- <h6 class="service-modal-subtitle">What is Technology Research?</h6>
+              <p>Technology research involves systematically gathering, analyzing, and interpreting data to uncover insights that drive better strategic decisions, product development, and competitive advantage.</p> -->
+              
+              <h6 class="service-modal-subtitle mt-3">What we offer</h6>
+              <ul class="service-modal-list">
+                <li><i class="bi bi-check-circle-fill"></i> Market &amp; competitive analysis</li>
+                <li><i class="bi bi-check-circle-fill"></i> Technology feasibility studies</li>
+                <li><i class="bi bi-check-circle-fill"></i> Data collection &amp; analytics</li>
+                <li><i class="bi bi-check-circle-fill"></i> AI-assisted research reports</li>
+                <li><i class="bi bi-check-circle-fill"></i> Trend forecasting &amp; insights</li>
+                <li><i class="bi bi-check-circle-fill"></i> Academic &amp; industry documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer service-modal-footer">
+          
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Modal: Research -->
+
+  <!-- Modal: Automation -->
+  <div class="modal fade" id="modalAutomation" tabindex="-1" aria-labelledby="modalAutomationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content service-modal-content">
+        <div class="modal-header service-modal-header">
+          <div class="service-modal-icon"><i class="bi bi-robot"style="color: black; font-size: 40px;"></i></div>
+          <h5 class="modal-title" id="modalAutomationLabel" style="color: black;font-size: 28px;">Automation</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <!-- IMAGE PLACEHOLDER: replace src with your Automation image -->
+              <div class="service-modal-img-wrapper">
+                <img src="assets/img/services/automation.jpg" alt="Automation" class="img-fluid rounded service-modal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="service-modal-img-placeholder" style="display:none">
+                  <i class="bi bi-image"></i>
+                  <span>Image coming soon</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- <h6 class="service-modal-subtitle">What is AI Automation?</h6>
+              <p>AI Automation uses artificial intelligence and machine learning to perform repetitive tasks, optimize workflows, and make intelligent decisions — freeing your team to focus on what matters most.</p> -->
+              <h6 class="service-modal-subtitle mt-3">What we offer</h6>
+              <ul class="service-modal-list">
+                <li><i class="bi bi-check-circle-fill"></i> Workflow &amp; process automation</li>
+                <li><i class="bi bi-check-circle-fill"></i> AI chatbots &amp; virtual assistants</li>
+                <li><i class="bi bi-check-circle-fill"></i> RPA (Robotic Process Automation)</li>
+                <li><i class="bi bi-check-circle-fill"></i> Integration with Make, Zapier, n8n</li>
+                <li><i class="bi bi-check-circle-fill"></i> Custom automation scripts &amp; APIs</li>
+                <li><i class="bi bi-check-circle-fill"></i> Business intelligence dashboards</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer service-modal-footer">
+          
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Modal: Automation -->
+
+  <!-- Modal: Mobile Apps -->
+  <div class="modal fade" id="modalMobileApps" tabindex="-1" aria-labelledby="modalMobileAppsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content service-modal-content">
+        <div class="modal-header service-modal-header">
+          <div class="service-modal-icon"><i class="bi bi-phone"style="color: black; font-size: 40px;"></i></div>
+          <h5 class="modal-title" id="modalMobileAppsLabel" style="color: black;font-size: 28px;">Mobile Apps</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <!-- IMAGE PLACEHOLDER: replace src with your Mobile Apps image -->
+              <div class="service-modal-img-wrapper">
+                <img src="assets/img/services/mobileapps.jpg" alt="Mobile Apps" class="img-fluid rounded service-modal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="service-modal-img-placeholder" style="display:none">
+                  <i class="bi bi-image"></i>
+                  <span>Image coming soon</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- <h6 class="service-modal-subtitle">What are Mobile Apps?</h6>
+              <p>Mobile applications are software programs designed to run on smartphones and tablets. They provide users with quick, touchscreen-optimized access to services, information, and tools from anywhere.</p> -->
+              <h6 class="service-modal-subtitle mt-3">What we offer</h6>
+              <ul class="service-modal-list">
+                <li><i class="bi bi-check-circle-fill"></i> Native iOS &amp; Android development</li>
+                <li><i class="bi bi-check-circle-fill"></i> Cross-platform apps (React Native, Flutter)</li>
+                <li><i class="bi bi-check-circle-fill"></i> UI/UX design for mobile</li>
+                <li><i class="bi bi-check-circle-fill"></i> API &amp; backend integration</li>
+                <li><i class="bi bi-check-circle-fill"></i> App Store &amp; Google Play publishing</li>
+                <li><i class="bi bi-check-circle-fill"></i> Maintenance &amp; version updates</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer service-modal-footer">
+          
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Modal: Mobile Apps -->
+
+  <!-- Modal: Cybersecurity -->
+  <div class="modal fade" id="modalCybersecurity" tabindex="-1" aria-labelledby="modalCybersecurityLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content service-modal-content">
+        <div class="modal-header service-modal-header">
+          <div class="service-modal-icon"><i class="bi bi-fingerprint"style="color: black; font-size: 40px;"></i></div>
+          <h5 class="modal-title" id="modalCybersecurityLabel" style="color: black;font-size: 28px;">Cybersecurity</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <!-- IMAGE PLACEHOLDER: replace src with your Cybersecurity image -->
+              <div class="service-modal-img-wrapper">
+                <img src="assets/img/services/cybersecurity.jpg" alt="Cybersecurity" class="img-fluid rounded service-modal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="service-modal-img-placeholder" style="display:none">
+                  <i class="bi bi-image"></i>
+                  <span>Image coming soon</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- <h6 class="service-modal-subtitle">What is Cybersecurity?</h6>
+              <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. It involves defending against unauthorized access, data breaches, ransomware, and other cyber threats.</p> -->
+              <h6 class="service-modal-subtitle mt-3">What we offer</h6>
+              <ul class="service-modal-list">
+                <li><i class="bi bi-check-circle-fill"></i> Security audits &amp; vulnerability assessments</li>
+                <li><i class="bi bi-check-circle-fill"></i> Penetration testing</li>
+                <li><i class="bi bi-check-circle-fill"></i> Data encryption &amp; secure protocols</li>
+                <li><i class="bi bi-check-circle-fill"></i> Firewall &amp; intrusion detection</li>
+                <li><i class="bi bi-check-circle-fill"></i> Security training for teams</li>
+                <li><i class="bi bi-check-circle-fill"></i> Compliance (GDPR, ISO 27001)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer service-modal-footer">
+          
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- End Modal: Cybersecurity -->
+
+  <!-- ===== SERVICE MODAL STYLES ===== -->
+  <style>
+    .service-modal-content {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(113, 112, 112, 0.25);
+    }
+    .service-modal-header {
+      background: linear-gradient(135deg, #3498db 0%, #065d98ff 100%);
+      color: #fff;
+      padding: 1.4rem 1.6rem;
+      border-bottom: none;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .service-modal-header .modal-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+    .service-modal-icon {
+      width: 48px;
+      height: 48px;
+      background: #3498db;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .modal-body {
+      padding: 1.8rem;
+      background: #f9fafb;
+    }
+    .service-modal-subtitle {
+      font-weight: 700;
+      color: #3498db;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-left: 3px solid #065d98ff
+      padding: 0;
+      margin: 0;
+    }
+    .service-modal-list li {
+      padding: 5px 0;
+      font-size: 0.9rem;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-modal-list li i {
+      color: #3498db;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .service-modal-img-wrapper {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #e8f5e9;
+    }
+    .service-modal-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .service-modal-img-placeholder {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color:  #3498db;
+      gap: 8px;
+    }
+    .service-modal-img-placeholder i {
+      font-size: 2.5rem;
+      opacity: 0.6;
+    }
+    .service-modal-img-placeholder span {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      font-style: italic;
+    }
+    .service-modal-footer {
+      background: #fff;
+      border-top: 1px solid #e0e0e0;
+      padding: 1rem 1.6rem;
+    }
+    .service-modal-btn {
+      background: linear-gradient(135deg, #3498db, #065d98ff);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .service-modal-btn:hover {
+      background: linear-gradient(135deg, #3498db, #065d98ff);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px #3498db;
+    }
+    .service-modal-btn i {
+      margin-right: 6px;
+    }
+    @media (max-width: 576px) {
+      .service-modal-img-wrapper, .service-modal-img-placeholder { height: 160px; }
+    }
+  </style>
 
 <?php 
 include_once './assets/includes/footer.php';
