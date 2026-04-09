@@ -1,6 +1,6 @@
 <footer class="text-center text-lg-start mt-auto">
     <div class="container p-4 text-center color-primario">
-        <p>&copy; 2025 <a class="link-primario" href="https://greenpc.dev/"> Green PC</a>. Todos los derechos reservados. </p>
+        <p>&copy; 2026 <a class="link-primario" href="https://greenpc.dev/"> Green PC</a>. Todos los derechos reservados. </p>
     </div>
 </footer>
 
