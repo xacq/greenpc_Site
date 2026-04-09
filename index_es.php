@@ -45,6 +45,7 @@
           <li><a href="#services">Servicios</a></li>
           <li><a href="#portfolio">Portafolio</a></li>
           <li><a href="./blog.php">Blogs</a></li>
+          <li><a href="./programacion.php">Programación</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -568,22 +569,22 @@
 
     </section><!-- /Sección de Tecnologías -->
 
-    <!-- Sección de Llamado a la Acción -->
-    <section id="call-to-action" class="call-to-action section dark-background">
+<!-- Call To Action Section -->
+<section id="call-to-action" class="call-to-action section dark-background">
 
-      <img src="assets/img/cta-bg.jpg" alt="">
+  <img src="assets/img/cta-bg.jpg" alt="">
 
-      <div class="container">
-        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-10">
-            <div class="text-center">              
-              <a class="cta-btn btn-lg" href="https://wa.link/hczezg"> <i class="bi bi-whatsapp"></i> Contáctanos</a>
-            </div>
-          </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <div class="text-center">
+          <a class="cta-btn btn-lg" href="https://wa.link/hczezg"> <i class="bi bi-whatsapp"></i> Call To Action</a>
         </div>
       </div>
+    </div>
+  </div>
 
-    </section><!-- /Sección de Llamado a la Acción -->
+</section><!-- /Call To Action Section -->
 
   </main>
 

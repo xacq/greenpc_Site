@@ -1,11 +1,15 @@
 <footer id="footer" class="footer dark-background">
 
-<div class="footer-top text-center">
+<div class="footer-top">
   <div class="container">
     <div class="row gy-4">
-      <div class="col-lg-6 col-md-6 footer-about">
+      <div class="col-lg-12 col-md-12 footer-about text-center">
+        <img src="assets/img/logo.png" alt="" width="400px">
+      </div>
+      <div class="col-lg-12 col-md-12 footer-about text-center">
+
         <div class="footer-contact pt-3">
-          <p>Misicata</p>
+          <p>Misicata - Baguanchi</p>
           <p>Cuenca, Ecuador</p>
           <p class="mt-3"><strong>WhatsApp:</strong> <a href="https://wa.link/hczezg"><span>+593 998784470</span></a></p>
           <p><strong>Email:</strong> <a href="mailto:info@greenpc.dev"><span>info@greenpc.dev</span></a></p>
@@ -18,19 +22,10 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 footer-links">
-        <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#about"> About us</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services"> Services</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#portfolio"> Portfolio</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#clients"> Technologies</a></li>
-        </ul>
-      </div>
-
     </div>
   </div>
 </div>
+
 
 <div class="copyright">
   <div class="container text-center">
