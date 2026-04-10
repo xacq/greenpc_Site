@@ -55,7 +55,6 @@
     <section id="hero" class="hero section dark-background">
       <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
       <div class="container">
-
         <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
           <div class="col-xl-6 col-lg-8">
             <h2>Programación a la medida</h2>
@@ -63,6 +62,103 @@
         </div>
       </div>
     </section><!-- /Sección Hero -->
+
+    <!-- Sección Crediticia-->
+    <section id="about" class="about section">
+      <!-- Título de la Sección -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Sistemas con Modelos Entrenados (ML)</h2>
+        <p>Predicción de riesgo crediticio, Texto Predictivo, ML e IA</p>
+      </div><!-- Fin del Título de la Sección -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="assets/img/modelo_risk.jpg" class="img-fluid" alt="">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="./modelo_risk_mockup.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+              </div>
+              <div class="col-md-6">
+                <a href="#" class="btn btn-outline-success mt-2 mb-2" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#videoModalRisk"><i style="color: #ffc107;"class="bi bi-play-circle-fill me-1"></i> Ver Video..!</a>
+              </div>
+            </div>
+          </div>  
+          <div class="col-lg-7 order-2 order-lg-1 content">
+            <h3>CARACTERISTICAS</h3>
+              <div class="software-features">
+                <h2>Sistema Integral de Riesgo Crediticio</h2>
+                <h3>Módulos navegables (barra lateral/superior):</h3>
+                <ul style="font-size: 12px;">
+                    <li><strong>Dashboard:</strong> con KPIs en tiempo real, gráficas, evolución mensual del riesgo y alertas.</li>
+                    <li><strong>Cargar datos:</strong> importación desde CSV/XLS/XLSX con selección de modo de carga, whitelist de columnas y trazabilidad .</li>
+                    <li><strong>Batches:</strong> historial de importaciones con fecha, usuario, modo, estado, total de registros cargados y omitidos.</li>
+                    <li><strong>Clientes:</strong> cartera agregada con filtros por oficina, tipo de crédito, categoría vigente, estado y nivel de riesgo ML.</li>
+                    <li><strong>Ver / Evaluar cliente:</strong> ficha completa del cliente (oficina, crédito, garantía, sexo, operaciones, monto, saldo, patrimonio, mora).</li>
+                    <li><strong>Scoring ML — Modelo predictivo:</strong> clasificación del cliente; muestra ML crudo, probabilidad, calificación de contraste, riesgo.</li>
+                    <li><strong>Operaciones crediticias:</strong> créditos por cliente con tipo, garantía, monto, saldo, mora, categoría y estado; filtros de busqueda.</li>
+                    <li><strong>Historial de reevaluaciones:</strong> auditoría: crédito, mora, categoría anterior, nivel, score, probabilidad y predicción.</li>
+                </ul>
+
+                  <hr>
+                  
+                  <p>Adaptado a la <strong>normativa ecuatoriana.</strong> <br><strong class="text-danger" style="font-size: 12px;">(Se aplican restricciones segun la cantidad de servicios que se desea en el sistema modular). </p>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Sección Acerca de -->
+
+        <!-- Seccion OCR predictivo-->
+    <section id="about" class="about section">
+      <!-- Título de la Sección -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gestión Documental</h2>
+        <p>Extracción de datos de documentos y predicción (OCR).</p>
+      </div><!-- Fin del Título de la Sección -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="assets/img/gestor.jpg" class="img-fluid" alt="">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="#" class="btn btn-outline-success mt-2 mb-2" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#videoModalGestor"><i style="color: #ffc107;"class="bi bi-play-circle-fill me-1"></i> Ver Video..!</a>
+              </div>
+            </div>
+          </div>  
+          <div class="col-lg-7 order-2 order-lg-1 content">
+            <h3>CARACTERISTICAS</h3>
+              <div class="software-features">
+                <h2>Sistema Integral de Gestión Documental + OCR + INTRANET (sin acceso externo)</h2>
+                <h3>Módulos navegables:</h3>
+                <ul style="font-size: 12px;">
+                    <li><strong>Dashboard:</strong> con KPIs en tiempo real, gráficas, evolución mensual del riesgo y alertas.</li>
+                    <li><strong>Cargar datos:</strong> importación desde CSV/XLS/XLSX con selección de modo de carga, whitelist de columnas y trazabilidad .</li>
+                    <li><strong>Batches:</strong> historial de importaciones con fecha, usuario, modo, estado, total de registros cargados y omitidos.</li>
+                    <li><strong>Clientes:</strong> cartera agregada con filtros por oficina, tipo de crédito, categoría vigente, estado y nivel de riesgo ML.</li>
+                    <li><strong>Ver / Evaluar cliente:</strong> ficha completa del cliente (oficina, crédito, garantía, sexo, operaciones, monto, saldo, patrimonio, mora).</li>
+                    <li><strong>Scoring ML — Modelo predictivo:</strong> clasificación del cliente; muestra ML crudo, probabilidad, calificación de contraste, riesgo.</li>
+                    <li><strong>Operaciones crediticias:</strong> créditos por cliente con tipo, garantía, monto, saldo, mora, categoría y estado; filtros de busqueda.</li>
+                    <li><strong>Historial de reevaluaciones:</strong> auditoría: crédito, mora, categoría anterior, nivel, score, probabilidad y predicción.</li>
+                </ul>
+
+                  <hr>
+                  
+                  <p>Adaptado a la <strong>normativa ecuatoriana.</strong> <br><strong class="text-danger" style="font-size: 12px;">(Se aplican restricciones segun la cantidad de servicios que se desea en el sistema modular). </p>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Sección Acerca de -->
 
     <!-- Sección Servicios contables -->
     <section id="about" class="about section">
@@ -77,14 +173,14 @@
         <div class="row gy-4">
           <div class="col-lg-5 order-1 order-lg-2">
             <img src="assets/img/contable.jpg" class="img-fluid" alt="">
-              <a href="./contable_mockup.php" class="btn btn-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+              <a href="./contable_mockup.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
           </div>
           <div class="col-lg-7 order-2 order-lg-1 content">
             <h3>CARACTERISTICAS</h3>
               <div class="software-features">
                   <h2>Multi-empresa / Multi-RUC</h2>
                   <h3>Módulos navegables (barra lateral):</h3>
-                  <ul>
+                  <ul style="font-size: 12px;">
                       <li><strong>Dashboard:</strong> con KPIs, comprobantes recientes y alertas tributarias.</li>
                       <li><strong>Libro diario:</strong> con asientos de partida doble completos (incluye IVA 15%, IESS, retenciones).</li>
                       <li><strong>Plan de cuentas NIIF:</strong> con jerarquía de 4 niveles (1 → 1.1 → 1.1.1 → 1.1.1.01).</li>
@@ -123,14 +219,14 @@
         <div class="row gy-4">
           <div class="col-lg-5 order-1 order-lg-2">
             <img src="assets/img/gobernanza.jpg" class="img-fluid" alt="">
-              <a href="./gobernanza_mockup.php" class="btn btn-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+              <a href="./gobernanza_mockup.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
           </div>
           <div class="col-lg-7 order-2 order-lg-1 content">
             <h3>CARACTERISTICAS</h3>
               <div class="software-features">
             <h2>GeoVerde — Gestión Ambiental</h2>
             <h3>Módulos navegables (barra lateral):</h3>
-            <ul>
+            <ul style="font-size: 12px;">
                 <li><strong>Dashboard:</strong> Vista central con KPIs de cumplimiento global, alertas de obligaciones críticas y registro cronológico de actividades.</li>
                 <li><strong>Seguimiento Ambiental:</strong> Control detallado del Plan de Manejo Ambiental (PMA) con gestión de evidencias (fotos/PDF) por área técnica.</li>
                 <li><strong>Auditoría e Informes:</strong> Historial de auditorías anuales, verificación de cumplimiento normativo y programación de inspecciones.</li>
@@ -168,14 +264,14 @@
         <div class="row gy-4">
           <div class="col-lg-5 order-1 order-lg-2">
             <img src="assets/img/movil_mockup.jpg" class="img-fluid" alt="">
-              <a href="./movil_mockup.php" class="btn btn-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+              <a href="./movil_mockup.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
           </div>
           <div class="col-lg-7 order-2 order-lg-1 content">
             <h3>CARACTERISTICAS</h3>
               <div class="software-features">
                 <h2>GeoVerde — App Móvil (Mockup)</h2>
                 <h3>Módulos y funcionalidades clave:</h3>
-                <ul>
+                <ul style="font-size: 12px;">
                     <li><strong>Dashboard de Inicio:</strong> Visualización del cumplimiento global (78%), métricas de tareas cumplidas/pendientes y alertas urgentes.</li>
                     <li><strong>Seguimiento Ambiental:</strong> Gestión de obligaciones filtradas por Plan de Manejo, Normativa y Licencias con estados de avance.</li>
                     <li><strong>Detalle de Obligación:</strong> Información técnica específica, marco normativo, historial de cumplimiento y gestión evidencias.</li>
@@ -203,7 +299,7 @@
       <!-- Título de la Sección -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Sistemas de Control Educativo</h2>
-        <p>Sistemas de gestion de control de calidad y gestión de proyectos con IA</p>
+        <p>Sistemas de gestion de control de calidad Educativa + IA</p>
       </div><!-- Fin del Título de la Sección -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -211,14 +307,14 @@
         <div class="row gy-4">
           <div class="col-lg-5 order-1 order-lg-2">
             <img src="assets/img/academico.jpg" class="img-fluid" alt="">
-              <a href="./academico_mockup.php" class="btn btn-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+              <a href="./academico_mockup.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
           </div>
           <div class="col-lg-7 order-2 order-lg-1 content">
             <h3>CARACTERISTICAS</h3>
               <div class="software-features">
                 <h2>EduTrack AI (Mockup)</h2>
                 <h3>Módulos y funcionalidades clave:</h3>
-                  <ul>
+                  <ul style="font-size: 12px;">
                     <li>Panel KPI con 4 métricas clave: promedio general, estudiantes activos, materias y tasa de aprobación</li>
                     <li>Gráfica de barras comparativa de promedios por materia para los 3 cursos simultáneamente</li>
                     <li>Línea de tendencia mensual con doble eje: evolución de notas y porcentaje de aprobados</li>
@@ -244,48 +340,7 @@
     </section><!-- /Sección Acerca de -->
 
 
-            <!-- Sección Educacion-->
-    <section id="about" class="about section">
-      <!-- Título de la Sección -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Sistemas con Modelos Entrenados (ML)</h2>
-        <p>Predicción de riesgo crediticio, Texto Predictivo, ML, IA, etc.</p>
-      </div><!-- Fin del Título de la Sección -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-5 order-1 order-lg-2">
-            <img src="assets/img/modelo_risk.jpg" class="img-fluid" alt="">
-              <a href="./modelo_risk_mockup.php" class="btn btn-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
-          </div>  
-          <div class="col-lg-7 order-2 order-lg-1 content">
-            <h3>CARACTERISTICAS</h3>
-              <div class="software-features">
-                <h2>Sistema Integral de Riesgo Crediticio</h2>
-                <h3>Módulos navegables (barra lateral/superior):</h3>
-                <ul>
-                    <li><strong>Dashboard:</strong> con KPIs en tiempo real, gráficas, evolución mensual del riesgo y alertas.</li>
-                    <li><strong>Cargar datos:</strong> importación desde CSV/XLS/XLSX con selección de modo de carga, whitelist de columnas y trazabilidad .</li>
-                    <li><strong>Batches:</strong> historial de importaciones con fecha, usuario, modo, estado, total de registros cargados y omitidos.</li>
-                    <li><strong>Clientes:</strong> cartera agregada con filtros por oficina, tipo de crédito, categoría vigente, estado y nivel de riesgo ML.</li>
-                    <li><strong>Ver / Evaluar cliente:</strong> ficha completa del cliente (oficina, crédito, garantía, sexo, operaciones, monto, saldo, patrimonio, mora).</li>
-                    <li><strong>Scoring ML — Modelo predictivo:</strong> clasificación del cliente; muestra ML crudo, probabilidad, calificación de contraste, riesgo.</li>
-                    <li><strong>Operaciones crediticias:</strong> créditos por cliente con tipo, garantía, monto, saldo, mora, categoría y estado; filtros de busqueda.</li>
-                    <li><strong>Historial de reevaluaciones:</strong> auditoría: crédito, mora, categoría anterior, nivel, score, probabilidad y predicción.</li>
-                </ul>
-
-                  <hr>
-                  
-                  <p>Adaptado a la <strong>normativa ecuatoriana.</strong> <br><strong class="text-danger" style="font-size: 12px;">(Se aplican restricciones segun la cantidad de servicios que se desea en el sistema modular). </p>
-              </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Sección Acerca de -->
 
     <!-- Sección de Tecnologías -->
     <section id="clients" class="clients section">
@@ -377,6 +432,151 @@
   </div>
 
 </section><!-- /Call To Action Section -->
+
+  <!-- Modal de Video - Riesgo Crediticio -->
+  <div class="modal fade" id="videoModalRisk" tabindex="-1" aria-labelledby="videoModalRiskLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content" style="background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.6);">
+        <div class="modal-header border-0" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 1rem 1.5rem;">
+          <h5 class="modal-title text-white d-flex align-items-center gap-2" id="videoModalRiskLabel">
+            <i class="bi bi-play-circle-fill" style="color: #ffc107;"></i>
+            Video — Sistema de Riesgo Crediticio
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0" style="position: relative; background: #000;">
+          <!-- Opción 1: Video local (MP4) - Descomenta y ajusta la ruta si tienes un archivo local -->
+          <video id="videoPlayerRisk" class="w-100" controls controlsList="nodownload" style="display: block; max-height: 75vh; object-fit: contain;" poster="assets/img/modelo_risk.jpg">
+            <source src="assets/video/video_riesgo.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+
+          <!-- Opción 2: Video de YouTube - Descomenta y reemplaza VIDEO_ID si prefieres YouTube -->
+          <!-- <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe id="ytPlayerRisk" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
+              src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Video - Riesgo -->
+  <div class="modal fade" id="videoModalRisk" tabindex="-1" aria-labelledby="videoModalGestorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content" style="background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.6);">
+        <div class="modal-header border-0" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 1rem 1.5rem;">
+          <h5 class="modal-title text-white d-flex align-items-center gap-2" id="videoModalGestorLabel">
+            <i class="bi bi-play-circle-fill" style="color: #ffc107;"></i>
+            Video — Sistema de Riesgo Crediticio
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0" style="position: relative; background: #000;">
+          <!-- Opción 1: Video local (MP4) - Descomenta y ajusta la ruta si tienes un archivo local -->
+          <video id="videoPlayerRisk" class="w-100" controls controlsList="nodownload" style="display: block; max-height: 75vh; object-fit: contain;" poster="assets/img/modelo_risk.jpg">
+            <source src="assets/video/video_riesgo.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+
+          <!-- Opción 2: Video de YouTube - Descomenta y reemplaza VIDEO_ID si prefieres YouTube -->
+          <!-- <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe id="ytPlayerRisk" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
+              src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal de Video - Gestor Doucmental -->
+  <div class="modal fade" id="videoModalGestor" tabindex="-1" aria-labelledby="videoModalGestorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content" style="background: #0d0d0d; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.6);">
+        <div class="modal-header border-0" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 1rem 1.5rem;">
+          <h5 class="modal-title text-white d-flex align-items-center gap-2" id="videoModalGestorLabel">
+            <i class="bi bi-play-circle-fill" style="color: #ffc107;"></i>
+            Video — Sistema de Gestión Documental + OCR + LAN
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0" style="position: relative; background: #000;">
+          <!-- Opción 1: Video local (MP4) - Descomenta y ajusta la ruta si tienes un archivo local -->
+          <video id="videoPlayerRisk" class="w-100" controls controlsList="nodownload" style="display: block; max-height: 75vh; object-fit: contain;" poster="assets/img/gestor.jpg">
+            <source src="assets/video/video_gestor.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+
+          <!-- Opción 2: Video de YouTube - Descomenta y reemplaza VIDEO_ID si prefieres YouTube -->
+          <!-- <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe id="ytPlayerRisk" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
+              src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Script para pausar video al cerrar modal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const videoModal = document.getElementById('videoModalRisk');
+      
+      if (videoModal) {
+        // Pausar video local al cerrar
+        videoModal.addEventListener('hidden.bs.modal', function () {
+          const video = document.getElementById('videoPlayerRisk');
+          if (video) {
+            video.pause();
+            video.currentTime = 0;
+          }
+
+          // Si usas YouTube, descomenta esto:
+          // const ytPlayer = document.getElementById('ytPlayerRisk');
+          // if (ytPlayer) { ytPlayer.src = ''; }
+        });
+
+        // Si usas YouTube, descomenta esto para cargar el video al abrir:
+        // videoModal.addEventListener('shown.bs.modal', function () {
+        //   const ytPlayer = document.getElementById('ytPlayerRisk');
+        //   if (ytPlayer) { ytPlayer.src = 'https://www.youtube.com/embed/VIDEO_ID?autoplay=1'; }
+        // });
+      }
+    });
+  </script>
+
+  <style>
+    /* Animación premium para el modal de video */
+    #videoModalRisk .modal-content {
+      animation: modalSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes modalSlideIn {
+      from { transform: scale(0.85) translateY(30px); opacity: 0; }
+      to   { transform: scale(1) translateY(0); opacity: 1; }
+    }
+    #videoModalRisk .modal-dialog {
+      max-width: 900px;
+    }
+    #videoModalRisk .btn-close-white:hover {
+      opacity: 1;
+      transform: rotate(90deg);
+      transition: all 0.3s ease;
+    }
+    #videoModalRisk .btn-close-white {
+      transition: all 0.3s ease;
+    }
+    #videoModalRisk .modal-backdrop {
+      backdrop-filter: blur(8px);
+    }
+    #videoModalRisk video:focus {
+      outline: none;
+    }
+  </style>
 
   </main>
 
