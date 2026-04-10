@@ -198,7 +198,94 @@
     </section><!-- /Sección Acerca de -->
 
 
+        <!-- Sección Educacion-->
+    <section id="about" class="about section">
+      <!-- Título de la Sección -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Sistemas de Control Educativo</h2>
+        <p>Sistemas de gestion de control de calidad y gestión de proyectos con IA</p>
+      </div><!-- Fin del Título de la Sección -->
 
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="assets/img/academico.jpg" class="img-fluid" alt="">
+              <a href="./academico_mockup.php" class="btn btn-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+          </div>
+          <div class="col-lg-7 order-2 order-lg-1 content">
+            <h3>CARACTERISTICAS</h3>
+              <div class="software-features">
+                <h2>EduTrack AI (Mockup)</h2>
+                <h3>Módulos y funcionalidades clave:</h3>
+                  <ul>
+                    <li>Panel KPI con 4 métricas clave: promedio general, estudiantes activos, materias y tasa de aprobación</li>
+                    <li>Gráfica de barras comparativa de promedios por materia para los 3 cursos simultáneamente</li>
+                    <li>Línea de tendencia mensual con doble eje: evolución de notas y porcentaje de aprobados</li>
+                    <li>Donut interactivo de distribución de calificaciones por rango (excelente, bueno, regular, bajo)</li>
+                    <li>Mapa de calor materia × semana con código de colores para identificar rendimiento de un vistazo</li>
+                    <li>Tabla de estudiantes con avatares, notas de aporte, examen, calificación final, barra de progreso y tendencia</li>
+                    <li>Búsqueda en tiempo real de estudiantes por nombre, materia, curso o código</li>
+                    <li>Ranking de los 6 mejores estudiantes del grupo con medallas y puntuación</li>
+                    <li>Franja de alerta automática para estudiantes en riesgo de reprobación con acciones directas</li>
+                    <li>Asistente IA integrado (Claude) con consultas rápidas, chat libre y análisis ejecutivo del grupo</li>
+                  </ul>
+
+                  <hr>
+                  
+                  <p>Adaptado a la <strong>normativa ecuatoriana.</strong> <br><strong class="text-danger" style="font-size: 12px;">(Se aplican restricciones segun la cantidad de servicios que se desea en el sistema modular). </p>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Sección Acerca de -->
+
+
+            <!-- Sección Educacion-->
+    <section id="about" class="about section">
+      <!-- Título de la Sección -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Sistemas con Modelos Entrenados (ML)</h2>
+        <p>Predicción de riesgo crediticio, Texto Predictivo, ML, IA, etc.</p>
+      </div><!-- Fin del Título de la Sección -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="assets/img/modelo_risk.jpg" class="img-fluid" alt="">
+              <a href="./modelo_risk_mockup.php" class="btn btn-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+          </div>  
+          <div class="col-lg-7 order-2 order-lg-1 content">
+            <h3>CARACTERISTICAS</h3>
+              <div class="software-features">
+                <h2>Sistema Integral de Riesgo Crediticio</h2>
+                <h3>Módulos navegables (barra lateral/superior):</h3>
+                <ul>
+                    <li><strong>Dashboard:</strong> con KPIs en tiempo real, gráficas, evolución mensual del riesgo y alertas.</li>
+                    <li><strong>Cargar datos:</strong> importación desde CSV/XLS/XLSX con selección de modo de carga, whitelist de columnas y trazabilidad .</li>
+                    <li><strong>Batches:</strong> historial de importaciones con fecha, usuario, modo, estado, total de registros cargados y omitidos.</li>
+                    <li><strong>Clientes:</strong> cartera agregada con filtros por oficina, tipo de crédito, categoría vigente, estado y nivel de riesgo ML.</li>
+                    <li><strong>Ver / Evaluar cliente:</strong> ficha completa del cliente (oficina, crédito, garantía, sexo, operaciones, monto, saldo, patrimonio, mora).</li>
+                    <li><strong>Scoring ML — Modelo predictivo:</strong> clasificación del cliente; muestra ML crudo, probabilidad, calificación de contraste, riesgo.</li>
+                    <li><strong>Operaciones crediticias:</strong> créditos por cliente con tipo, garantía, monto, saldo, mora, categoría y estado; filtros de busqueda.</li>
+                    <li><strong>Historial de reevaluaciones:</strong> auditoría: crédito, mora, categoría anterior, nivel, score, probabilidad y predicción.</li>
+                </ul>
+
+                  <hr>
+                  
+                  <p>Adaptado a la <strong>normativa ecuatoriana.</strong> <br><strong class="text-danger" style="font-size: 12px;">(Se aplican restricciones segun la cantidad de servicios que se desea en el sistema modular). </p>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Sección Acerca de -->
 
     <!-- Sección de Tecnologías -->
     <section id="clients" class="clients section">
