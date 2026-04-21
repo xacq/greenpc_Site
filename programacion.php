@@ -153,20 +153,27 @@
     <section id="about" class="about section">
       <!-- Título de la Sección -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portal de Protección de Datos</h2>
+        <h2>Ley Organica de Protección de Datos Personales</h2>
         <p>Portal de Protección de Datos</p>
       </div><!-- Fin del Título de la Sección -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-          <div class="col-lg-12 order-1 order-lg-1 content">
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="assets/img/lopdp.jpg" class="img-fluid" alt="">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="./portal_lopdp.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo (mockup)..!</a>
+              </div>
+            </div>
+          </div>            
+          <div class="col-lg-7 order-1 order-lg-1 content">
               <div class="software-features">
                 <h2>Portal de Protección de Datos</h2>
                 <h3>Portal de Privacidad - Protección de Datos Personales</h3>
                 <p>Un portal de privacidad es una página web o sección de un sitio web que recopila, organiza y presenta información relacionada con la privacidad y protección de datos personales de los usuarios. Su objetivo principal es informar a los usuarios sobre cómo se recopilan, utilizan, almacenan y protegen sus datos personales, así como proporcionarles herramientas y recursos para ejercer sus derechos como titulares de esos datos.</p>  
                 <p>En el contexto de la Ley Orgánica de Protección de Datos Personales (LOPDP) de Ecuador, un portal de privacidad es una herramienta fundamental para que las organizaciones cumplan con sus obligaciones legales y para que los titulares de los datos puedan ejercer sus derechos de manera efectiva.</p>
-                <a href="./portal_lopdp.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo..!</a>
                   <hr>
                   <p>Adaptado a la <strong>normativa ecuatoriana.</strong> <br><strong class="text-danger" style="font-size: 12px;">(Se aplican restricciones segun la cantidad de servicios que se desea en el sistema modular). </p>
               </div>
