@@ -1,0 +1,17 @@
+# Archivos pesados
+*.zip
+*.mp4
+
+# Dependencias / temporales
+node_modules/
+vendor/
+
+# Logs
+*.log
+
+# Config local
+.env
+
+# Sistema
+.DS_Store
+Thumbs.db
