@@ -258,6 +258,7 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    position: relative;
   }
 
   .navmenu a i,
@@ -272,10 +273,30 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
+  }
+
+  /* Nav underline deslizante */
+  .navmenu a::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+  }
+
+  .navmenu li:hover > a::after,
+  .navmenu .active::after,
+  .navmenu .active:focus::after {
+    transform: scaleX(1);
   }
 
   .navmenu .dropdown ul {
@@ -497,6 +518,12 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.footer .footer-tagline {
+  max-width: 320px;
+  color: color-mix(in srgb, var(--default-color), transparent 18%);
+  line-height: 1.7;
+}
+
 .footer .social-links a {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   background-color: color-mix(in srgb, var(--default-color) 5%, white 10%);
@@ -508,12 +535,31 @@ h6 {
   border-radius: 4px;
   font-size: 16px;
   margin-right: 10px;
-  transition: 0.3s;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .footer .social-links a:hover {
   color: var(--contrast-color);
   background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.footer .social-links .social-facebook:hover {
+  background-color: #1877f2;
+}
+
+.footer .social-links .social-linkedin:hover {
+  background-color: #0a66c2;
+}
+
+.footer .social-links .social-github:hover {
+  background-color: #111111;
+}
+
+.footer .social-links .social-behance:hover {
+  background-color: #053eff;
 }
 
 .footer h4 {
@@ -562,6 +608,11 @@ h6 {
 
 .footer .footer-contact p {
   margin-bottom: 5px;
+}
+
+.footer .footer-contact a,
+.footer .footer-links ul a {
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .footer .footer-newsletter .newsletter-form {
@@ -630,19 +681,44 @@ h6 {
   overflow: hidden;
   background: #000;
   transition: all 0.6s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
 }
 
 #preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
+  content: none;
+}
+
+#preloader .preloader-logo {
+  width: min(180px, 48vw);
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(0, 230, 118, 0.18));
+  animation: preloader-logo-pulse 2.2s ease-in-out infinite;
+}
+
+#preloader .preloader-spinner {
+  display: inline-block;
   border: 6px solid #ffffff;
   border-color: var(--accent-color) transparent var(--accent-color) transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes preloader-logo-pulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.92;
+  }
+
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
 }
 
 @keyframes animate-preloader {
@@ -653,6 +729,23 @@ h6 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/*--------------------------------------------------------------
+# Focus States
+--------------------------------------------------------------*/
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.cta-btn:focus-visible,
+.social-links a:focus-visible,
+.portfolio .portfolio-filters li:focus-visible,
+.scroll-top:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-color), white 12%);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent-color), transparent 82%);
 }
 
 /*--------------------------------------------------------------
@@ -686,6 +779,12 @@ h6 {
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
+  animation: scroll-top-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes scroll-top-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-color), transparent 50%); }
+  60% { box-shadow: 0 0 0 12px color-mix(in srgb, var(--accent-color), transparent 100%); }
 }
 
 /*--------------------------------------------------------------
@@ -886,12 +985,12 @@ section,
 
 .hero .icon-box:hover {
   border-color: var(--accent-color);
-  background-color: lightblue;
-  border: 0px;
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--accent-color), transparent 65%);
 }
 
 .hero .icon-box:hover h3 a {
-  color: rgb(0, 83, 139);
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
@@ -902,6 +1001,20 @@ section,
   .hero p {
     font-size: 18px;
   }
+}
+
+/* Hero typing cursor */
+.hero h2::after {
+  content: '|';
+  color: var(--accent-color);
+  font-weight: 300;
+  margin-left: 6px;
+  animation: hero-blink-cursor 1s step-end infinite;
+}
+
+@keyframes hero-blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /*--------------------------------------------------------------
@@ -942,13 +1055,14 @@ section,
 --------------------------------------------------------------*/
 .clients .swiper-slide img {
   opacity: 0.5;
-  transition: 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
   filter: grayscale(100);
 }
 
 .clients .swiper-slide img:hover {
   filter: none;
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .clients .swiper-wrapper {
@@ -1031,7 +1145,7 @@ section,
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  transition: 0.3s;
+  transition: all 0.4s ease;
 }
 
 .services .service-item .icon i {
@@ -1053,9 +1167,18 @@ section,
 }
 
 .services .service-item:hover {
-  box-shadow: 0px 0 20px 0 rgba(0, 0, 0, 1);
-  transform: translateY(-15px);
-  background-color: lightblue;
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--accent-color), transparent 60%);
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 96%);
+}
+
+/* Glow pulsante en icono al hover */
+.services .service-item:hover .icon {
+  box-shadow:
+    0 0 0 8px  color-mix(in srgb, var(--accent-color), transparent 80%),
+    0 0 0 16px color-mix(in srgb, var(--accent-color), transparent 94%);
+  transform: scale(1.12);
 }
 
 /*--------------------------------------------------------------
@@ -1115,12 +1238,44 @@ section,
   margin: 10px;
   border: 2px solid var(--default-color);
   color: var(--default-color);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: color-mix(in srgb, var(--background-color), transparent 65%);
+  box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
 }
 
 .call-to-action .cta-btn:hover {
   background: var(--accent-color);
   color: var(--background-color);
   border: 2px solid var(--accent-color);
+  box-shadow: 0 16px 34px rgba(0, 230, 118, 0.28);
+  transform: translateY(-2px);
+}
+
+.call-to-action .cta-btn::after {
+  content: "";
+  position: absolute;
+  inset: -20% auto -20% -130%;
+  width: 48%;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.14) 35%, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0.14) 65%, transparent 100%);
+  transform: skewX(-22deg);
+  animation: cta-shimmer 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes cta-shimmer {
+  0% {
+    left: -130%;
+  }
+
+  55% {
+    left: 150%;
+  }
+
+  100% {
+    left: 150%;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1224,6 +1379,16 @@ section,
   bottom: 0;
 }
 
+/* Portfolio img zoom on hover */
+.portfolio .portfolio-item img {
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+
+.portfolio .portfolio-item:hover img {
+  transform: scale(1.08);
+}
+
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
@@ -1252,6 +1417,30 @@ section,
   margin: 0;
   font-family: var(--heading-font);
   font-size: 14px;
+}
+
+/* Sufijo "+" en contadores de stats */
+.stats .stats-item .purecounter::after {
+  content: "+";
+  font-size: 0.6em;
+  font-weight: 700;
+  color: var(--accent-color);
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.stats .stats-visual {
+  animation: float-img 6s ease-in-out infinite;
+}
+
+@keyframes float-img {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1465,6 +1654,11 @@ section,
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
   margin-right: 15px;
+}
+
+.contact .info-item:hover i {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 22px color-mix(in srgb, var(--accent-color), transparent 62%);
 }
 
 .contact .info-item h3 {

@@ -31,11 +31,97 @@
 
 <body class="index-page">
 
+<!-- LOGO FLOTANTE -->
+<div id="logo-float-wrap" style="display:inline-block; position:fixed; bottom:20px; right:20px; z-index:9999;">
+  <a href="https://commit.greenpc.dev" target="_blank" rel="noopener" id="logo-link"
+    style="display:block; text-decoration:none;">
+    <img
+      src="./assets/img/commit_logo.png" 
+      id="logo-float"
+      alt="COMMIT by GreenPC"
+      style="
+        width:220px;
+        border-radius:14px;
+        border:1px solid rgba(0,230,118,0.2);
+        box-shadow:0 0 0 0 rgba(0,230,118,0);
+        transition:box-shadow 0.3s, transform 0.15s, border-color 0.3s;
+        will-change:transform;
+        display:block;
+      "
+    />
+  </a>
+</div>
+
+<script>
+(function(){
+  const logo = document.getElementById('logo-float');
+  const link = document.getElementById('logo-link');
+  
+  let currentScrollY = 0;
+  let currentMouseX = 0;
+  let currentMouseY = 0;
+  
+  function updateTransform() {
+    // Combinar scroll + tilt
+    const scrollTranslate = currentScrollY * -0.01;
+    const scrollRotate = currentScrollY * 0.001;
+    const tiltX = currentMouseX * 12;
+    const tiltY = currentMouseY * -12;
+    
+    logo.style.transform = `
+      translateY(${scrollTranslate}px) 
+      rotate(${scrollRotate}deg) 
+      perspective(600px) 
+      rotateY(${tiltX}deg) 
+      rotateX(${tiltY}deg)
+    `;
+  }
+
+  /* ── PARALLAX con scroll ── */
+  let ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      requestAnimationFrame(function(){
+        currentScrollY = window.scrollY;
+        updateTransform();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  /* ── TILT con movimiento del mouse ── */
+  document.addEventListener('mousemove', function(e){
+    const rect = logo.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    // Limitar valores entre -1 y 1 para evitar inclinación excesiva
+    currentMouseX = Math.min(Math.max((e.clientX - cx) / (window.innerWidth / 2), -1), 1);
+    currentMouseY = Math.min(Math.max((e.clientY - cy) / (window.innerHeight / 2), -1), 1);
+    updateTransform();
+  });
+
+  /* ── HOVER glow ── */
+  link.addEventListener('mouseenter', function(){
+    logo.style.boxShadow = '0 0 28px rgba(0,230,118,0.45), 0 0 60px rgba(0,230,118,0.15)';
+    logo.style.borderColor = 'rgba(0,230,118,0.6)';
+  });
+  link.addEventListener('mouseleave', function(){
+    logo.style.boxShadow = '0 0 0 0 rgba(0,230,118,0)';
+    logo.style.borderColor = 'rgba(0,230,118,0.2)';
+    // Resetear tilt al salir (opcional)
+    currentMouseX = 0;
+    currentMouseY = 0;
+    updateTransform();
+  });
+})();
+</script>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="./index.php" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="./assets/img/logo.png" alt="">
+        <img src="./assets/img/logo.png" alt="logo">
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -62,6 +148,36 @@
         </div>
       </div>
     </section><!-- /Sección Hero -->
+
+    <!-- Sección OLPDP-->
+    <section id="about" class="about section">
+      <!-- Título de la Sección -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portal de Protección de Datos</h2>
+        <p>Portal de Protección de Datos</p>
+      </div><!-- Fin del Título de la Sección -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-12 order-1 order-lg-1 content">
+              <div class="software-features">
+                <h2>Portal de Protección de Datos</h2>
+                <h3>Portal de Privacidad - Protección de Datos Personales</h3>
+                <p>Un portal de privacidad es una página web o sección de un sitio web que recopila, organiza y presenta información relacionada con la privacidad y protección de datos personales de los usuarios. Su objetivo principal es informar a los usuarios sobre cómo se recopilan, utilizan, almacenan y protegen sus datos personales, así como proporcionarles herramientas y recursos para ejercer sus derechos como titulares de esos datos.</p>  
+                <p>En el contexto de la Ley Orgánica de Protección de Datos Personales (LOPDP) de Ecuador, un portal de privacidad es una herramienta fundamental para que las organizaciones cumplan con sus obligaciones legales y para que los titulares de los datos puedan ejercer sus derechos de manera efectiva.</p>
+                <a href="./portal_lopdp.php" class="btn btn-outline-primary mt-2 mb-2" style="width: 100%;">Ver Demo..!</a>
+                  <hr>
+                  <p>Adaptado a la <strong>normativa ecuatoriana.</strong> <br><strong class="text-danger" style="font-size: 12px;">(Se aplican restricciones segun la cantidad de servicios que se desea en el sistema modular). </p>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Sección Acerca de -->
+
 
     <!-- Sección Crediticia-->
     <section id="about" class="about section">

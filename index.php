@@ -4,9 +4,18 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Green PC</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Green PC — Powerful Digital Solutions & AI</title>
+  <meta name="description" content="Green PC — Web development, AI automation, UX design, mobile apps & cybersecurity. Serving 600+ happy clients worldwide across 8+ countries.">
+  <meta name="keywords" content="web development, AI, artificial intelligence, UX design, cybersecurity, mobile apps, digital solutions, automation, Green PC">
+  <meta property="og:title" content="Green PC — Powerful Digital Solutions & AI">
+  <meta property="og:description" content="Web development, AI automation, UX design, mobile apps and cybersecurity for businesses worldwide.">
+  <meta property="og:image" content="https://greenpc.dev/assets/img/logo.png">
+  <meta property="og:url" content="https://greenpc.dev/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Green PC — Powerful Digital Solutions & AI">
+  <meta name="twitter:description" content="Web development, AI automation, UX design, mobile apps and cybersecurity for businesses worldwide.">
+  <meta name="twitter:image" content="https://greenpc.dev/assets/img/logo.png">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -31,6 +40,95 @@
 
 <body class="index-page">
 
+
+<!-- LOGO FLOTANTE -->
+<div id="logo-float-wrap" style="display:inline-block; position:fixed; bottom:20px; right:20px; z-index:9999;">
+  <a href="https://commit.greenpc.dev" target="_blank" rel="noopener" id="logo-link"
+    style="display:block; text-decoration:none;">
+    <img
+      src="./assets/img/commit_logo.png" 
+      id="logo-float"
+      alt="COMMIT by GreenPC"
+      style="
+        width:220px;
+        max-width:28vw;
+        border-radius:14px;
+        border:1px solid rgba(0,230,118,0.2);
+        box-shadow:0 0 0 0 rgba(0,230,118,0);
+        transition:box-shadow 0.3s, transform 0.15s, border-color 0.3s;
+        will-change:transform;
+        display:block;
+      "
+    />
+  </a>
+</div>
+
+<script>
+(function(){
+  const logo = document.getElementById('logo-float');
+  const link = document.getElementById('logo-link');
+  
+  let currentScrollY = 0;
+  let currentMouseX = 0;
+  let currentMouseY = 0;
+  
+  function updateTransform() {
+    // Combinar scroll + tilt
+    const scrollTranslate = currentScrollY * -0.01;
+    const scrollRotate = currentScrollY * 0.001;
+    const tiltX = currentMouseX * 12;
+    const tiltY = currentMouseY * -12;
+    
+    logo.style.transform = `
+      translateY(${scrollTranslate}px) 
+      rotate(${scrollRotate}deg) 
+      perspective(600px) 
+      rotateY(${tiltX}deg) 
+      rotateX(${tiltY}deg)
+    `;
+  }
+
+  /* ── PARALLAX con scroll ── */
+  let ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      requestAnimationFrame(function(){
+        currentScrollY = window.scrollY;
+        updateTransform();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  /* ── TILT con movimiento del mouse ── */
+  document.addEventListener('mousemove', function(e){
+    const rect = logo.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    // Limitar valores entre -1 y 1 para evitar inclinación excesiva
+    currentMouseX = Math.min(Math.max((e.clientX - cx) / (window.innerWidth / 2), -1), 1);
+    currentMouseY = Math.min(Math.max((e.clientY - cy) / (window.innerHeight / 2), -1), 1);
+    updateTransform();
+  });
+
+  /* ── HOVER glow ── */
+  link.addEventListener('mouseenter', function(){
+    logo.style.boxShadow = '0 0 28px rgba(0,230,118,0.45), 0 0 60px rgba(0,230,118,0.15)';
+    logo.style.borderColor = 'rgba(0,230,118,0.6)';
+  });
+  link.addEventListener('mouseleave', function(){
+    logo.style.boxShadow = '0 0 0 0 rgba(0,230,118,0)';
+    logo.style.borderColor = 'rgba(0,230,118,0.2)';
+    // Resetear tilt al salir (opcional)
+    currentMouseX = 0;
+    currentMouseY = 0;
+    updateTransform();
+  });
+})();
+</script>
+
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="./index.php" class="logo d-flex align-items-center me-auto me-lg-0">
@@ -43,6 +141,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="./blog.php">Blog</a></li>
+          <li><a href="./programacion.php">Programming</a></li>
           <!--li><a href="#team">Team</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -88,31 +188,31 @@
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <i class="bi bi-binoculars"></i>
-              <h3><a href="">Research</a></h3>
+              <h3><a href="#services">Research</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
               <i class="bi bi-bullseye"></i>
-              <h3><a href="">Development</a></h3>
+              <h3><a href="#services">Development</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <i class="bi bi-fullscreen-exit"></i>
-              <h3><a href="">UI / UX</a></h3>
+              <h3><a href="#services">UI / UX</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
             <div class="icon-box">
               <i class="bi bi-robot"></i>
-              <h3><a href="">AI</a></h3>
+              <h3><a href="#features">AI</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
             <div class="icon-box">
               <i class="bi bi-fingerprint"></i>
-              <h3><a href="">Cybersecurity</a></h3>
+              <h3><a href="#services">Cybersecurity</a></h3>
             </div>
           </div>
         </div>
@@ -163,7 +263,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>ARTIFITIAL INTELLIGENCE</h2>
+        <h2>ARTIFICIAL INTELLIGENCE</h2>
         <p>Our 4 principal goals</p>
       </div><!-- End Section Title -->
 
@@ -237,6 +337,7 @@
               <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalWebDev">
                 <h3>Web Dev</h3>
               </a>
+              <p class="service-desc">Custom websites &amp; web apps built with modern frameworks and best practices.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -248,6 +349,7 @@
               <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalUXDesign">
                 <h3>UX Design</h3>
               </a>
+              <p class="service-desc">Human-centered design that makes your digital product intuitive and engaging.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -259,6 +361,7 @@
               <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalResearch">
                 <h3>Research</h3>
               </a>
+              <p class="service-desc">Data-driven market and technology research to inform smarter decisions.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -270,7 +373,7 @@
               <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalAutomation">
                 <h3>Automation</h3>
               </a>
-
+              <p class="service-desc">AI-powered automation to eliminate repetitive tasks and scale workflows.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -282,7 +385,7 @@
               <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalMobileApps">
                 <h3>Mobile Apps</h3>
               </a>
-
+              <p class="service-desc">Native and cross-platform mobile apps for iOS and Android.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -294,6 +397,7 @@
               <a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalCybersecurity">
                 <h3>Cybersecurity</h3>
               </a>
+              <p class="service-desc">Protect your systems with security audits, testing, and compliance support.</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -327,118 +431,118 @@
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="Screenshot of the Favian Lema Lawyers PHP web system">
               <div class="portfolio-info">
                 <h4>Favian Lema Lawyers</h4>
                 <p>PHP Web System</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="Favian Lema PHP Web System" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.favianlema.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://www.favianlema.com/" title="More Details" class="details-link" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="Screenshot of the Obsidiam Corp Java Spring Boot platform">
               <div class="portfolio-info">
                 <h4>Obsidiam Corp.</h4>
                 <p>Java Spring Boot System</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Obsidiam Java System for Criptocoins" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.obsidiam.com" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://www.obsidiam.com" title="More Details" class="details-link" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="Screenshot of the ElPeriodicoDeCeuta WordPress website">
               <div class="portfolio-info">
                 <h4>ElPeriodicoDeCeuta</h4>
                 <p>WordPress System </p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="elperiodicodeceuta.es WordPress System" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.elperiodicodeceuta.es/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg" ></i></a>
+                <a href="https://www.elperiodicodeceuta.es/" title="More Details" class="details-link" target="_blank" rel="noopener"><i class="bi bi-link-45deg" ></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="Screenshot of the Openwebinars React web platform">
               <div class="portfolio-info">
                 <h4>Openwebinars</h4>
                 <p>React Web System + Researching IT</p>
                 <a href="https://openwebinars.net/autor/xavicq/">Professional Profile</a>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="Openwebinars React System + Researching IT Documentation" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://openwebinars.net/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://openwebinars.net/" title="More Details" class="details-link" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="Screenshot of the Masquealdia WordPress news site">
               <div class="portfolio-info">
                 <h4>Masquealdia</h4>
                 <p>Wordpress System</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Masquealdia Newspaper Wordpress" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://masquealdia.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://masquealdia.com/" title="More Details" class="details-link" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="Screenshot of the TeleCeuta WordPress publishing platform">
               <div class="portfolio-info">
                 <h4>TeleCeuta</h4>
                 <p>Wordpress System</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="TeleCeuta Wordpress System" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.teleceuta.com" title="More Details" class="details-link"  target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://www.teleceuta.com" title="More Details" class="details-link"  target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="Screenshot of the CHC Empresarial accountability website">
               <div class="portfolio-info">
                 <h4>CHC Empresarial</h4>
                 <p>Wordpress Accountability System</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="Wordpress Accountability System Solution" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://chcempresarial.com/index.php" title="More Details" class="details-link"  target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://chcempresarial.com/index.php" title="More Details" class="details-link"  target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="Screenshot of the ULANS tutorials and web design platform">
               <div class="portfolio-info">
                 <h4>ULANS</h4>
                 <p>Tutorials and Web Design on React + Node JS</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="ULANS Tutorials and Web Design on on React + Node JS" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://universidadulans.com/campus/login/index.php" title="More Details" class="details-link"  target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://universidadulans.com/campus/login/index.php" title="More Details" class="details-link"  target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="Screenshot of the AINNOVA Technologies medical AI platform">
               <div class="portfolio-info">
                 <h4>AINNOVA Technologies</h4>
                <p>Django Medical System supported with AI and Models Trained</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Django Medical System supported with AI and Models Trained" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.ainnovatech.com/" title="More Details" class="details-link"  target="_blank"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://www.ainnovatech.com/" title="More Details" class="details-link"  target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-10.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-10.jpg" class="img-fluid" alt="Screenshot of the PUCE Ecuador Moodle platform">
               <div class="portfolio-info">
                 <h4>PUCE Ecuador</h4>
                <p>Moodle Platform System with PHP and Tailwind UX</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-10.jpg" title="PUCE Moodle Platform System with PHP and Tailwind UX" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://auth-eva.puce.edu.ec:8443/login?service=https%3A%2F%2Fssoserver2.puce.edu.ec%2F"  target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://auth-eva.puce.edu.ec:8443/login?service=https%3A%2F%2Fssoserver2.puce.edu.ec%2F"  target="_blank" rel="noopener" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-12.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-12.jpg" class="img-fluid" alt="Preview of the Green PC Behance design portfolio">
               <div class="portfolio-info">
-                <h4>Behance<h4>
+                <h4>Behance</h4>
                <p>Folder with design works</p>
                 <a href="assets/img/masonry-portfolio/masonry-portfolio-12.jpg" title="Behance Folder with design works" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://www.behance.net/xaviercalvas"  target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="https://www.behance.net/xaviercalvas"  target="_blank" rel="noopener" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-11.jpg" class="img-fluid" alt="">
+              <img src="assets/img/masonry-portfolio/masonry-portfolio-11.jpg" class="img-fluid" alt="Preview of the RHEA platform under development">
               <div class="portfolio-info">
                 <h4>RHEA System Platform (on dev)</h4>
                <p>Django System with AI Automatization Support</p>
@@ -464,7 +568,7 @@
         <div class="row gy-4 align-items-center justify-content-between">
 
           <div class="col-lg-6">
-            <img src="assets/img/stats-img.jpg" alt="" class="img-fluid" width="600px">
+            <img src="assets/img/stats-img.jpg" alt="Green PC metrics and project growth illustration" class="img-fluid stats-visual" width="600px">
           </div>
 
           <div class="col-lg-6">
@@ -538,7 +642,8 @@
           "loop": true,
           "speed": 600,
           "autoplay": {
-            "delay": 1000
+            "delay": 1500,
+            "pauseOnMouseEnter": true
           },
           "slidesPerView": "auto",
           "pagination": {
@@ -605,7 +710,7 @@
     <div class="row justify-content-center">
       <div class="col-xl-10">
         <div class="text-center">
-          <a class="cta-btn btn-lg" href="https://wa.link/hczezg"> <i class="bi bi-whatsapp"></i> Call To Action</a>
+          <a class="cta-btn btn-lg" href="https://wa.link/hczezg"> <i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
       </div>
     </div>
@@ -655,7 +760,7 @@
         </div>
         <div class="modal-footer service-modal-footer">
           
-          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
       </div>
     </div>
@@ -667,7 +772,7 @@
       <div class="modal-content service-modal-content">
         <div class="modal-header service-modal-header">
           <div class="service-modal-icon"><i class="bi bi-ui-radios" style="color: black; font-size: 40px;"></i></div>
-          <h5 class="modal-title" id="modalUXDesignLabel" style="color: black;font-size: 28px;">UX Design</h5>
+          <h5 class="modal-title" id="modalUXDesignLabel">UX Design</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -699,7 +804,7 @@
         </div>
         <div class="modal-footer service-modal-footer">
           
-          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
       </div>
     </div>
@@ -711,7 +816,7 @@
       <div class="modal-content service-modal-content">
         <div class="modal-header service-modal-header">
           <div class="service-modal-icon"><i class="bi bi-journal-richtext" style="color: black; font-size: 40px;"></i></div>
-          <h5 class="modal-title" id="modalResearchLabel" style="color: black;font-size: 28px;">Research</h5>
+          <h5 class="modal-title" id="modalResearchLabel">Research</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -744,7 +849,7 @@
         </div>
         <div class="modal-footer service-modal-footer">
           
-          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
       </div>
     </div>
@@ -756,7 +861,7 @@
       <div class="modal-content service-modal-content">
         <div class="modal-header service-modal-header">
           <div class="service-modal-icon"><i class="bi bi-robot"style="color: black; font-size: 40px;"></i></div>
-          <h5 class="modal-title" id="modalAutomationLabel" style="color: black;font-size: 28px;">Automation</h5>
+          <h5 class="modal-title" id="modalAutomationLabel">Automation</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -788,7 +893,7 @@
         </div>
         <div class="modal-footer service-modal-footer">
           
-          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
       </div>
     </div>
@@ -800,7 +905,7 @@
       <div class="modal-content service-modal-content">
         <div class="modal-header service-modal-header">
           <div class="service-modal-icon"><i class="bi bi-phone"style="color: black; font-size: 40px;"></i></div>
-          <h5 class="modal-title" id="modalMobileAppsLabel" style="color: black;font-size: 28px;">Mobile Apps</h5>
+          <h5 class="modal-title" id="modalMobileAppsLabel">Mobile Apps</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -832,7 +937,7 @@
         </div>
         <div class="modal-footer service-modal-footer">
           
-          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
       </div>
     </div>
@@ -844,7 +949,7 @@
       <div class="modal-content service-modal-content">
         <div class="modal-header service-modal-header">
           <div class="service-modal-icon"><i class="bi bi-fingerprint"style="color: black; font-size: 40px;"></i></div>
-          <h5 class="modal-title" id="modalCybersecurityLabel" style="color: black;font-size: 28px;">Cybersecurity</h5>
+          <h5 class="modal-title" id="modalCybersecurityLabel">Cybersecurity</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -876,7 +981,7 @@
         </div>
 
         <div class="modal-footer service-modal-footer">
-          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a>
+          <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
 
       </div>
@@ -928,7 +1033,12 @@
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      border-left: 3px solid #065d98ff
+      border-left: 3px solid #065d98ff;
+      padding-left: 8px;
+      margin-bottom: 0.6rem;
+    }
+    .service-modal-list {
+      list-style: none;
       padding: 0;
       margin: 0;
     }
@@ -1005,7 +1115,15 @@
     @media (max-width: 576px) {
       .service-modal-img-wrapper, .service-modal-img-placeholder { height: 160px; }
     }
+    .service-desc {
+      font-size: 0.85rem;
+      color: #5a6a7e;
+      margin-top: 0.5rem;
+      line-height: 1.4;
+      padding: 0 0.5rem 0.75rem;
+    }
   </style>
+
 
 <?php 
 include_once './assets/includes/footer.php';
