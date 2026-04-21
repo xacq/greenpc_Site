@@ -10,7 +10,7 @@ include './includes/head.php'; // Incluimos el head con Bootstrap
     Política de Privacidad</h1>
 
     <h2>1. Introducción</h2>
-    <p>Esta aplicacion, pscaja.com</strong>, esta comprometida a proteger la privacidad y confidencialidad de toda la información que las usuarios proporcionen. Reconocemos que esta información es extremadamente sensible y tomamos todas las medidas necesarias para garantizar su seguridad y uso adecuado. Esta Política de Privacidad explica cómo recopilamos, utilizamos, almacenamos y protegemos la información personal de los usuarios registrados en nuestra plataforma, cumpliendo con la <strong>Ley Orgánica de Protección de Datos Personales (LOPDP)</strong> vigente en Ecuador.</p>
+    <p>Esta aplicacion, </strong>, esta comprometida a proteger la privacidad y confidencialidad de toda la información que las usuarios proporcionen. Reconocemos que esta información es extremadamente sensible y tomamos todas las medidas necesarias para garantizar su seguridad y uso adecuado. Esta Política de Privacidad explica cómo recopilamos, utilizamos, almacenamos y protegemos la información personal de los usuarios registrados en nuestra plataforma, cumpliendo con la <strong>Ley Orgánica de Protección de Datos Personales (LOPDP)</strong> vigente en Ecuador.</p>
 
     <h2>2. Información que Recopilamos</h2>
     <p>Recopilamos la siguiente información de las usuarios:</p>
@@ -63,7 +63,7 @@ include './includes/head.php'; // Incluimos el head con Bootstrap
 
     <h2>9. Contacto</h2>
     <p>Si tiene alguna duda o inquietud sobre esta Política de Privacidad o sobre cómo manejamos su información personal, por favor contáctenos a 
-        <a class="class=link-info link-offset-2 link-underline link-underline-opacity-0" href="mailto:info@pscaja.top">info@pscaja.top</a>.</p>
+        <a class="class=link-info link-offset-2 link-underline link-underline-opacity-0" href="mailto:info@greenpc.dev">info@greenpc.dev</a>.</p>
 
 </div>
 
