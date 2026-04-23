@@ -161,9 +161,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </svg>        
             Registro</h1>
             <div class="color-primario text-center">
-                    <p>La aplicación encripta la informacion sensible para usted.  
+                    <p>Tratamos sus datos con medidas de seguridad y acceso restringido.
                         Lea nuestra <a class="link-primario link-offset-2 link-underline link-underline-opacity-0" 
-                        href="../politicasprivacidad.php">Política de Privacidad</a>.</p>
+                        href="./politicasprivacidad.php">Política de Privacidad</a>.</p>
                 </div>
             <form method="POST" action="./register.php" onsubmit="return validarContrasenas();">
 

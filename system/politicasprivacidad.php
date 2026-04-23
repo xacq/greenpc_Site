@@ -1,80 +1,385 @@
 <?php
-$title = 'Políticas de Privacidad';
-include './includes/head.php'; // Incluimos el head con Bootstrap
+$title = 'Política de Privacidad';
+include './includes/head.php';
 ?>
-<div class="container text-secondary">
-    <h1 class="text-dark text-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-incognito" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="m4.736 1.968-.892 3.269-.014.058C2.113 5.568 1 6.006 1 6.5 1 7.328 4.134 8 8 8s7-.672 7-1.5c0-.494-1.113-.932-2.83-1.205l-.014-.058-.892-3.27c-.146-.533-.698-.849-1.239-.734C9.411 1.363 8.62 1.5 8 1.5s-1.411-.136-2.025-.267c-.541-.115-1.093.2-1.239.735m.015 3.867a.25.25 0 0 1 .274-.224c.9.092 1.91.143 2.975.143a30 30 0 0 0 2.975-.143.25.25 0 0 1 .05.498c-.918.093-1.944.145-3.025.145s-2.107-.052-3.025-.145a.25.25 0 0 1-.224-.274M3.5 10h2a.5.5 0 0 1 .5.5v1a1.5 1.5 0 0 1-3 0v-1a.5.5 0 0 1 .5-.5m-1.5.5q.001-.264.085-.5H2a.5.5 0 0 1 0-1h3.5a1.5 1.5 0 0 1 1.488 1.312 3.5 3.5 0 0 1 2.024 0A1.5 1.5 0 0 1 10.5 9H14a.5.5 0 0 1 0 1h-.085q.084.236.085.5v1a2.5 2.5 0 0 1-5 0v-.14l-.21-.07a2.5 2.5 0 0 0-1.58 0l-.21.07v.14a2.5 2.5 0 0 1-5 0zm8.5-.5h2a.5.5 0 0 1 .5.5v1a1.5 1.5 0 0 1-3 0v-1a.5.5 0 0 1 .5-.5"/>
-        </svg>
-    Política de Privacidad</h1>
 
-    <h2>1. Introducción</h2>
-    <p>Esta aplicacion, </strong>, esta comprometida a proteger la privacidad y confidencialidad de toda la información que las usuarios proporcionen. Reconocemos que esta información es extremadamente sensible y tomamos todas las medidas necesarias para garantizar su seguridad y uso adecuado. Esta Política de Privacidad explica cómo recopilamos, utilizamos, almacenamos y protegemos la información personal de los usuarios registrados en nuestra plataforma, cumpliendo con la <strong>Ley Orgánica de Protección de Datos Personales (LOPDP)</strong> vigente en Ecuador.</p>
+<style>
+    :root {
+        --privacy-primary: #3498db;
+        --privacy-primary-soft: rgba(52, 152, 219, 0.12);
+        --privacy-secondary: #7f8c8d;
+        --privacy-surface: #ffffff;
+        --privacy-surface-alt: #f5f9fc;
+        --privacy-border: rgba(52, 152, 219, 0.16);
+        --privacy-text: #243746;
+        --privacy-muted: #5f6f7b;
+    }
 
-    <h2>2. Información que Recopilamos</h2>
-    <p>Recopilamos la siguiente información de las usuarios:</p>
-    <ul>
-        <li>Nombre completo</li>
-        <li>Cédula de identidad (en caso de proporcionarse)</li>
-        <li>Información de contacto (correo electrónico, número de teléfono)</li>
-        <li>Información laboral, como zona de trabajo y horarios</li>
-        <li>Cualquier otra información proporcionada por los usuarios de manera voluntaria</li>
-    </ul>
-    <p>Toda la información recopilada es tratada con el más alto nivel de confidencialidad y solo se utiliza para los fines descritos en esta política.</p>
+    body {
+        background:
+            radial-gradient(circle at top right, rgba(52, 152, 219, 0.16), transparent 28%),
+            linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
+        color: var(--privacy-text);
+    }
 
-    <h2>3. Finalidad del Tratamiento de Datos</h2>
-    <p>La información recopilada se utilizará para:</p>
-    <ul>
-        <li>Gestionar el registro y acceso a los servicios ofrecidos por la plataforma.</li>
-        <li>Brindar soporte y atención personalizada a las usuarios.</li>
-        <li>Proteger la seguridad de las usuarios y garantizar la integridad de la plataforma.</li>
-        <li>Cumplir con requisitos legales o regulatorios, si así se solicita.</li>
-    </ul>
-    <p>En ningún caso los datos proporcionados por las usuarios serán vendidos, transferidos o divulgados a terceros sin su consentimiento explícito, salvo en casos que la ley lo exija.</p>
+    .privacy-page {
+        padding: 56px 0 72px;
+    }
 
-    <h2>4. Protección de la Información</h2>
-    <p>Para proteger la información personal, implementamos las siguientes medidas de seguridad:</p>
-    <ul>
-        <li><strong>Cifrado de datos</strong>: Toda la información almacenada en nuestra base de datos está encriptada utilizando algoritmos de cifrado avanzados.</li>
-        <li><strong>Cifrado de contraseñas</strong>: Las contraseñas son almacenadas utilizando algoritmos de hash seguros, como bcrypt, para garantizar su protección.</li>
-        <li><strong>Conexiones seguras (HTTPS) y certificados SSL</strong>: Todas las interacciones en la plataforma se realizan mediante conexiones seguras (HTTPS) para proteger la información durante su transmisión así como la seguridad actualizada reurrentemente gracias a los cerificados SSL que pertenecen a la configuracion del servidor.</li>
-        <li><strong>Control de acceso</strong>: Solo personal autorizado, que ha sido capacitado en el manejo de datos sensibles, puede acceder a la información almacenada, y lo hace bajo estrictos controles de acceso.</li>
-    </ul>
+    .privacy-hero,
+    .privacy-card,
+    .privacy-sidebar {
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid var(--privacy-border);
+        border-radius: 24px;
+        box-shadow: 0 20px 50px rgba(36, 55, 70, 0.08);
+    }
 
-    <h2>5. Derechos de los Usuarios</h2>
-    <p>De acuerdo con la Ley Orgánica de Protección de Datos Personales (LOPDP), las usuarios tienen los siguientes derechos:</p>
-    <ul>
-        <li><strong>Acceso a la información</strong>: Las usuarios pueden solicitar información sobre los datos que hemos recopilado y cómo se están utilizando.</li>
-        <li><strong>Rectificación y actualización</strong>: Las usuarios tienen derecho a corregir cualquier dato inexacto o incompleto.</li>
-        <li><strong>Eliminación de datos</strong>: Las usuarios pueden solicitar en cualquier momento la eliminación de sus datos personales de nuestra plataforma.</li>
-        <li><strong>Portabilidad</strong>: Las usuarios pueden solicitar una copia de sus datos en un formato estructurado y comúnmente utilizado.</li>
-    </ul>
-    <p>Para ejercer estos derechos, las usuarios pueden ponerse en contacto con nosotros a través de <a class="class=link-info link-offset-2 link-underline link-underline-opacity-0" href="mailto:info@greenpc.dev">info@greenpc.dev</a> y procesaremos su solicitud en un plazo razonable.</p>
+    .privacy-hero {
+        padding: 40px;
+        margin-bottom: 28px;
+    }
 
-    <h2>6. Almacenamiento de Datos</h2>
-    <p>La información personal será almacenada por el tiempo que sea necesario para cumplir con los fines descritos en esta política, o hasta que los usuarios soliciten la eliminación de sus datos. Implementamos procedimientos regulares de auditoría y revisión de la seguridad de los datos para garantizar su protección continua.</p>
+    .privacy-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        margin-bottom: 18px;
+        border-radius: 999px;
+        background: var(--privacy-primary-soft);
+        color: var(--privacy-primary);
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
 
-    <h2>7. Consentimiento y Confidencialidad</h2>
-    <p>El registro y uso de la plataforma implica el consentimiento explícito de las usuarios para que recopilemos, almacenemos y procesemos su información de acuerdo con los términos descritos en esta política. Respetamos la confidencialidad de la información personal y estamos comprometidos con garantizar que ninguna información se divulgará sin el consentimiento expreso de los usuarios, salvo cuando lo exija la ley.</p>
+    .privacy-hero h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 14px;
+        color: #163042;
+    }
 
-    <h2>8. Cambios en la Política de Privacidad</h2>
-    <p>Nos reservamos el derecho de actualizar o modificar esta Política de Privacidad en cualquier momento. Si realizamos cambios significativos, se notificará a las usuarios a través de los medios de contacto proporcionados, y se publicará la nueva política en la plataforma. Las usuarios deben revisar periódicamente esta política para estar al tanto de cualquier cambio.</p>
+    .privacy-hero p {
+        color: var(--privacy-muted);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 0;
+    }
 
-    <h2>9. Contacto</h2>
-    <p>Si tiene alguna duda o inquietud sobre esta Política de Privacidad o sobre cómo manejamos su información personal, por favor contáctenos a 
-        <a class="class=link-info link-offset-2 link-underline link-underline-opacity-0" href="mailto:info@greenpc.dev">info@greenpc.dev</a>.</p>
+    .privacy-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.95fr);
+        gap: 24px;
+        align-items: start;
+    }
 
-</div>
+    .privacy-card {
+        padding: 32px;
+    }
 
-<div class="container text-end">
-    <a href="./index.php" class="btn btn-outline-secondary w-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+    .privacy-card + .privacy-card {
+        margin-top: 20px;
+    }
+
+    .privacy-section-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: var(--privacy-primary-soft);
+        color: var(--privacy-primary);
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .privacy-card h2 {
+        font-size: 1.45rem;
+        margin-bottom: 12px;
+        color: #163042;
+    }
+
+    .privacy-card p,
+    .privacy-card li {
+        color: var(--privacy-muted);
+        line-height: 1.8;
+    }
+
+    .privacy-card ul {
+        padding-left: 1.1rem;
+        margin-bottom: 0;
+    }
+
+    .privacy-highlight-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+        margin-top: 24px;
+    }
+
+    .privacy-highlight {
+        padding: 18px;
+        border-radius: 18px;
+        background: var(--privacy-surface-alt);
+        border: 1px solid rgba(52, 152, 219, 0.1);
+    }
+
+    .privacy-highlight strong {
+        display: block;
+        margin-bottom: 8px;
+        color: #163042;
+    }
+
+    .privacy-sidebar {
+        padding: 28px;
+        position: sticky;
+        top: 24px;
+    }
+
+    .privacy-sidebar h3 {
+        font-size: 1.15rem;
+        margin-bottom: 16px;
+        color: #163042;
+    }
+
+    .privacy-sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+    }
+
+    .privacy-sidebar li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        color: var(--privacy-muted);
+        line-height: 1.7;
+    }
+
+    .privacy-sidebar li + li {
+        margin-top: 14px;
+    }
+
+    .privacy-sidebar li svg {
+        flex-shrink: 0;
+        color: var(--privacy-primary);
+        margin-top: 4px;
+    }
+
+    .privacy-contact-box {
+        padding: 18px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #eef7fd, #f8fbfd);
+        border: 1px solid rgba(52, 152, 219, 0.12);
+    }
+
+    .privacy-contact-box a {
+        color: var(--privacy-primary);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .privacy-contact-box a:hover {
+        color: #1f6ca3;
+        text-decoration: underline;
+    }
+
+    .privacy-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 28px;
+    }
+
+    @media (max-width: 991.98px) {
+        .privacy-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .privacy-sidebar {
+            position: static;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .privacy-page {
+            padding-top: 28px;
+        }
+
+        .privacy-hero,
+        .privacy-card,
+        .privacy-sidebar {
+            border-radius: 20px;
+            padding: 24px;
+        }
+    }
+</style>
+
+<main class="privacy-page">
+    <div class="container">
+        <section class="privacy-hero">
+            <span class="privacy-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M8 0c-.69 0-1.281.355-1.686.74-.405.384-.77.96-1.07 1.648C4.646 3.756 4.5 5.254 4.5 6v1H3a2 2 0 0 0-2 2v4.5A2.5 2.5 0 0 0 3.5 16h9a2.5 2.5 0 0 0 2.5-2.5V9a2 2 0 0 0-2-2h-1.5V6c0-.746-.146-2.244-.744-3.612-.3-.688-.665-1.264-1.07-1.648C9.281.355 8.69 0 8 0m2.5 7h-5V6c0-.587.12-1.852.579-2.903.23-.526.5-.93.8-1.214C7.18 1.6 7.548 1.5 8 1.5s.82.1 1.121.383c.3.285.57.688.8 1.214.459 1.051.579 2.316.579 2.903z"/>
                 </svg>
-            Regresar</a>
-</div>
+                Protección de datos personales
+            </span>
+            <h1>Política de Privacidad</h1>
+            <p>
+                En Green PC tratamos los datos personales con criterios de confidencialidad, uso legítimo y acceso restringido.
+                Esta política describe qué información puede recopilar el sistema, para qué se utiliza, cómo se protege y qué
+                derechos tiene cada usuario conforme a la normativa aplicable en Ecuador, incluida la Ley Orgánica de Protección
+                de Datos Personales (LOPDP).
+            </p>
+            <div class="privacy-highlight-grid">
+                <div class="privacy-highlight">
+                    <strong>Última actualización</strong>
+                    <span class="text-secondary">23 de abril de 2026</span>
+                </div>
+                <div class="privacy-highlight">
+                    <strong>Ámbito</strong>
+                    <span class="text-secondary">Usuarios registrados en Green PC System</span>
+                </div>
+                <div class="privacy-highlight">
+                    <strong>Canal de contacto</strong>
+                    <span class="text-secondary">info@greenpc.dev</span>
+                </div>
+            </div>
+        </section>
 
-    <?php include './includes/footer.php'; // Incluimos el pie de página ?>
+        <div class="privacy-layout">
+            <div>
+                <section class="privacy-card">
+                    <span class="privacy-section-number">1</span>
+                    <h2>Datos que podemos recopilar</h2>
+                    <p>
+                        La información tratada por la plataforma depende del uso del sistema y de los formularios completados por
+                        cada usuario. En el flujo actual de registro y acceso, pueden recopilarse los siguientes datos:
+                    </p>
+                    <ul>
+                        <li>Nombres y apellidos.</li>
+                        <li>Correo electrónico.</li>
+                        <li>Número de cédula.</li>
+                        <li>Contraseña definida por el usuario durante el registro.</li>
+                        <li>Datos básicos de acceso, sesión y control de ingreso al sistema.</li>
+                    </ul>
+                </section>
 
+                <section class="privacy-card">
+                    <span class="privacy-section-number">2</span>
+                    <h2>Finalidad del tratamiento</h2>
+                    <p>Los datos personales se utilizan exclusivamente para fines relacionados con la operación del sistema, entre ellos:</p>
+                    <ul>
+                        <li>Crear y administrar cuentas de usuario.</li>
+                        <li>Permitir el acceso seguro a módulos, servicios y contenidos autorizados.</li>
+                        <li>Validar identidad, credenciales y permisos dentro de la plataforma.</li>
+                        <li>Atender solicitudes de soporte o requerimientos administrativos.</li>
+                        <li>Cumplir obligaciones legales, regulatorias o contractuales cuando corresponda.</li>
+                    </ul>
+                    <p class="mb-0">
+                        Green PC no comercializa los datos personales ingresados en esta plataforma y no los comparte con terceros
+                        fuera de los supuestos permitidos por la ley o autorizados por el titular.
+                    </p>
+                </section>
 
+                <section class="privacy-card">
+                    <span class="privacy-section-number">3</span>
+                    <h2>Seguridad de la información</h2>
+                    <p>
+                        Aplicamos medidas técnicas y organizativas razonables para proteger la información frente a accesos no autorizados,
+                        alteraciones, pérdida o divulgación indebida. Entre ellas se incluyen:
+                    </p>
+                    <ul>
+                        <li>Restricción de acceso a usuarios y personal autorizado.</li>
+                        <li>Almacenamiento de contraseñas mediante funciones hash seguras.</li>
+                        <li>Controles internos para autenticación, sesiones y gestión de cuentas.</li>
+                        <li>Revisión periódica de los procesos vinculados al tratamiento de datos.</li>
+                    </ul>
+                    <p class="mb-0">
+                        Ningún sistema es completamente infalible; por ello, la seguridad se gestiona como un proceso continuo de mejora.
+                    </p>
+                </section>
+
+                <section class="privacy-card">
+                    <span class="privacy-section-number">4</span>
+                    <h2>Conservación de los datos</h2>
+                    <p>
+                        Los datos personales se conservan durante el tiempo necesario para cumplir la finalidad para la cual fueron
+                        recopilados, mantener la operación del servicio y atender obligaciones legales o de auditoría. Cuando los datos
+                        dejan de ser necesarios, se eliminan o bloquean conforme a los procedimientos internos aplicables.
+                    </p>
+                </section>
+
+                <section class="privacy-card">
+                    <span class="privacy-section-number">5</span>
+                    <h2>Derechos del titular</h2>
+                    <p>
+                        El titular de los datos puede solicitar, según corresponda y conforme a la LOPDP, el ejercicio de sus derechos de:
+                    </p>
+                    <ul>
+                        <li>Acceso a sus datos personales.</li>
+                        <li>Rectificación o actualización de información inexacta.</li>
+                        <li>Eliminación de datos cuando sea legalmente procedente.</li>
+                        <li>Oposición o limitación del tratamiento en los casos previstos por la normativa.</li>
+                        <li>Portabilidad de sus datos cuando aplique.</li>
+                    </ul>
+                    <p class="mb-0">
+                        Para ejercer cualquiera de estos derechos, puede escribir a
+                        <a class="link-primario" href="mailto:info@greenpc.dev">info@greenpc.dev</a>.
+                    </p>
+                </section>
+
+                <section class="privacy-card">
+                    <span class="privacy-section-number">6</span>
+                    <h2>Actualizaciones de esta política</h2>
+                    <p class="mb-0">
+                        Esta política puede modificarse para reflejar cambios operativos, legales o técnicos. La versión vigente será la
+                        publicada en esta misma página, con su fecha de actualización correspondiente.
+                    </p>
+                </section>
+            </div>
+
+            <aside class="privacy-sidebar">
+                <h3>Resumen rápido</h3>
+                <ul>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M7 4.5a.5.5 0 0 0-1 0V8c0 .133.053.26.146.354l2.5 2.5a.5.5 0 0 0 .708-.708L7 7.793z"/>
+                        </svg>
+                        Los datos se usan para registro, autenticación, soporte y operación del sistema.
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M8 1a2 2 0 0 0-2 2v1H5.5A1.5 1.5 0 0 0 4 5.5v7A1.5 1.5 0 0 0 5.5 14h5a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 10.5 4H10V3a2 2 0 0 0-2-2M7 4V3a1 1 0 1 1 2 0v1z"/>
+                        </svg>
+                        Las contraseñas no se almacenan en texto plano.
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M8 0a5.53 5.53 0 0 0-4.473 2.246c-.457.632-.827 1.438-1.1 2.245C1.913 6.006 1.5 7.593 1.5 8c0 .407.413 1.994.927 3.509.273.807.643 1.613 1.1 2.245A5.53 5.53 0 0 0 8 16a5.53 5.53 0 0 0 4.473-2.246c.457-.632.827-1.438 1.1-2.245.514-1.515.927-3.102.927-3.509 0-.407-.413-1.994-.927-3.509-.273-.807-.643-1.613-1.1-2.245A5.53 5.53 0 0 0 8 0m0 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9m0 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6"/>
+                        </svg>
+                        El titular puede solicitar acceso, rectificación o eliminación cuando corresponda.
+                    </li>
+                </ul>
+
+                <div class="privacy-contact-box">
+                    <h3>Contacto</h3>
+                    <p class="text-secondary mb-2">Para consultas sobre privacidad o ejercicio de derechos:</p>
+                    <p class="mb-1"><a href="mailto:info@greenpc.dev">info@greenpc.dev</a></p>
+                    <p class="text-secondary mb-0">Green PC</p>
+                </div>
+            </aside>
+        </div>
+
+        <div class="privacy-actions">
+            <a href="./index.php" class="btn btn-outline-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="me-1" viewBox="0 0 16 16" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+                </svg>
+                Regresar
+            </a>
+        </div>
+    </div>
+</main>
+
+<?php include './includes/footer.php'; ?>
