@@ -761,13 +761,6 @@ $solutionCount = count($solutions);
       margin: 0 auto 24px;
     }
 
-    .program-cta__panel .btn {
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      min-width: 220px;
-    }
-
     .program-video-modal .modal-content {
       background: #081320;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1182,7 +1175,7 @@ $solutionCount = count($solutions);
 
 
 
-    <section id="contacto-programacion" class="program-cta section dark-background">
+    <section id="contacto-programacion" class="program-cta call-to-action section dark-background">
       <img src="assets/img/cta-bg.jpg" alt="Fondo de contacto para software a medida">
       <div class="container">
         <div class="row justify-content-center">
@@ -1191,7 +1184,7 @@ $solutionCount = count($solutions);
               <h2>Si ya tienes un proceso claro, podemos convertirlo en una demo funcional.</h2>
               <p>Comparte tu caso por WhatsApp y te ayudamos a definir alcance, modulos prioritarios y el formato correcto: portal, sistema interno, app movil, OCR o plataforma analitica.</p>
 
-                <a href="https://wa.link/hczezg" class="btn service-modal-btn" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contáctanos</a>
+                <a href="https://wa.link/hczezg" class="cta-btn btn-lg" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Contáctanos</a>
 
             </div>
           </div>
