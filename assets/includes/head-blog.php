@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Inicio - Green PC</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Blog de Tecnologia - Green PC</title>
+  <meta name="description" content="Analisis, tendencias y herramientas sobre inteligencia artificial, desarrollo web, ciberseguridad y producto digital en el blog de Green PC.">
+  <meta name="keywords" content="blog tecnologia, inteligencia artificial, desarrollo web, ciberseguridad, green pc, herramientas digitales">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -41,7 +41,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="./index.php" class="active">Inicio<br></a></li>
+          <li><a href="./index.php">Inicio<br></a></li>
           <li><a href="./blog.php" class="active">Blogs<br></a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

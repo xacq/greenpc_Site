@@ -7,18 +7,18 @@ $audioFile = '../audio/articles/' . $articleId . '.mp3';
 $audioTitle = $articleTitle;
 $audioImage = '../assets/img/audio.jpg'; // Imagen por defecto si no se proporciona una
 $audioDuration = '3.25'; // Podrías calcular esto con PHP o JS
+$pageTitle = 'Firebase Studio: El IDE del Futuro - Green PC';
+$pageDescription = 'Analisis de Firebase Studio, la apuesta de Google por un IDE cloud con IA, prototipado rapido e integracion full-stack.';
 
 include_once '../assets/includes/head-es-blog.php';
 ?>
-
-<title>Firebase Studio: El IDE del Futuro</title>
 
 <?php
   include_once '../assets/includes/header-es-blog.php';
 ?>
 
     <section id="hero" class="hero section dark-background">
-        <img src="../assets/img/blog/firebase-bg.png" alt="" data-aos="fade-in">
+        <img src="../assets/img/blog/firebase-bg.png" alt="Visual del articulo sobre Firebase Studio y desarrollo asistido por IA" data-aos="fade-in">
             <div class="container text-center">
                 <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-xl-6 col-lg-8 ">
@@ -436,20 +436,3 @@ include_once '../assets/includes/head-es-blog.php';
 <?php 
 include_once('../assets/includes/footer-es-blog.php');
 ?>
-
-
-<script>
-    // Barra de progreso de lectura
-    window.onscroll = function() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = scrolled + "%";
-    };
-
-    // Inicializar tooltips
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-</script>

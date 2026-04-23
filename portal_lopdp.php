@@ -329,6 +329,87 @@
     margin-top: 18px;
   }
 
+  /* PAGE TOOLS */
+  .page-tools {
+    position: sticky;
+    top: 62px;
+    z-index: 95;
+    padding: 14px 24px;
+    background: rgba(247,244,238,0.86);
+    border-bottom: 1px solid rgba(224,221,214,0.9);
+    backdrop-filter: blur(14px);
+  }
+  .page-tools[hidden] {
+    display: none !important;
+  }
+  .page-tools-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+  .page-tools-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .page-tools-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .page-tools-title {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .page-tools-count {
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+  .page-tools-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .page-tools-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--gray-200);
+    background: rgba(255,255,255,0.92);
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    box-shadow: 0 1px 8px rgba(13,31,60,0.06);
+  }
+  .page-tools-link:hover {
+    transform: translateY(-1px);
+    border-color: rgba(184,145,42,0.4);
+    box-shadow: 0 6px 18px rgba(13,31,60,0.1);
+  }
+  .page-tools-link.active {
+    background: var(--navy);
+    color: var(--gold-light);
+    border-color: var(--navy);
+    box-shadow: 0 10px 24px rgba(13,31,60,0.16);
+  }
+  .page-tools-link:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
   /* CONTENT */
   .content {
     max-width: 860px;
@@ -817,6 +898,39 @@
     vertical-align: middle;
   }
 
+  /* SCROLL TOP */
+  .scroll-top-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 14px 30px rgba(13,31,60,0.22);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+    z-index: 1190;
+  }
+  .scroll-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .scroll-top-btn:hover {
+    background: var(--navy-light);
+  }
+  .scroll-top-btn:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
   /* MODAL */
   body.modal-open {
     overflow: hidden;
@@ -978,6 +1092,25 @@
       padding: 10px 12px;
       background: rgba(255,255,255,0.04);
     }
+    .page-tools {
+      top: 74px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .page-tools-inner {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .page-tools-links {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+    }
+    .page-tools-link {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
     .form-row { grid-template-columns: 1fr; }
     .cards-grid { grid-template-columns: 1fr; }
     .hero {
@@ -1010,6 +1143,10 @@
       padding-left: 18px;
       padding-right: 18px;
     }
+    .scroll-top-btn {
+      right: 16px;
+      bottom: 16px;
+    }
   }
 </style>
 </head>
@@ -1037,6 +1174,17 @@
     </ul>
   </div>
 </nav>
+
+<div id="page-tools" class="page-tools" hidden aria-label="Navegación contextual de la página">
+  <div class="page-tools-inner">
+    <div class="page-tools-meta">
+      <span class="page-tools-label">En esta página</span>
+      <strong id="page-tools-title" class="page-tools-title">Contenido</strong>
+      <span id="page-tools-count" class="page-tools-count"></span>
+    </div>
+    <div id="page-tools-links" class="page-tools-links"></div>
+  </div>
+</div>
 
 <main id="page-content">
 <!-- ═══════════════════════════════════════════════
@@ -1823,6 +1971,7 @@
   <strong>EMPRESA</strong> — Portal de Privacidad y Protección de Datos Personales<br>
   Cumplimiento de la Ley Orgánica de Protección de Datos Personales (LOPDP) — R.O. N.° 459, 26 de mayo de 2021 · Reglamento General — Decreto Ejecutivo N.° 904, noviembre de 2023
 </footer>
+<button id="scroll-top-btn" class="scroll-top-btn" type="button" aria-label="Volver arriba">↑</button>
 </main>
 
 <script>
@@ -1830,12 +1979,120 @@
   const navToggle = document.querySelector('.nav-toggle');
   const extraInfoModal = document.getElementById('extra-info-modal');
   const dpdInfoModal = document.getElementById('dpd-info-modal');
+  const scrollTopBtn = document.getElementById('scroll-top-btn');
+  const pageTools = document.getElementById('page-tools');
+  const pageToolsTitle = document.getElementById('page-tools-title');
+  const pageToolsCount = document.getElementById('page-tools-count');
+  const pageToolsLinks = document.getElementById('page-tools-links');
+  const pageOrder = ['inicio', 'politica', 'empleados', 'clientes', 'proveedores', 'arco'];
+  let activeToolButtons = [];
+  let activeToolSections = [];
+  let activeToolPageId = 'inicio';
+  let activeSectionObserver = null;
 
   function toggleNav(forceOpen) {
     const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !navLinks.classList.contains('is-open');
     navLinks.classList.toggle('is-open', shouldOpen);
     navToggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
     navToggle.textContent = shouldOpen ? '✕' : '☰';
+  }
+
+  function slugify(text) {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  function updatePageToolActiveState(index) {
+    activeToolButtons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === index;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  }
+
+  function destroySectionObserver() {
+    if (activeSectionObserver) {
+      activeSectionObserver.disconnect();
+      activeSectionObserver = null;
+    }
+  }
+
+  function buildPageTools(id) {
+    const page = document.getElementById('page-' + id);
+    const pageHeading = page ? page.querySelector('.page-hero h1') : null;
+    const sections = page ? Array.from(page.querySelectorAll('.section')) : [];
+
+    destroySectionObserver();
+    activeToolButtons = [];
+    activeToolSections = [];
+    pageToolsLinks.innerHTML = '';
+    activeToolPageId = id;
+
+    if (!page || id === 'inicio' || sections.length === 0) {
+      pageTools.hidden = true;
+      return;
+    }
+
+    sections.forEach((section, index) => {
+      const heading = section.querySelector('h2');
+      if (!heading) {
+        return;
+      }
+
+      if (!section.id) {
+        section.id = 'page-' + id + '-section-' + (index + 1) + '-' + slugify(heading.textContent);
+      }
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'page-tools-link';
+      button.textContent = heading.textContent.trim();
+      button.setAttribute('aria-current', 'false');
+      button.addEventListener('click', () => {
+        const topOffset = pageTools.hidden ? 84 : pageTools.offsetHeight + 92;
+        const top = section.getBoundingClientRect().top + window.scrollY - topOffset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        updatePageToolActiveState(index);
+      });
+      pageToolsLinks.appendChild(button);
+      activeToolButtons.push(button);
+      activeToolSections.push(section);
+    });
+
+    pageToolsTitle.textContent = pageHeading ? pageHeading.textContent.trim() : 'Contenido';
+    pageToolsCount.textContent = activeToolSections.length + ' secciones disponibles';
+    pageTools.hidden = activeToolSections.length === 0;
+
+    if (activeToolSections.length === 0) {
+      return;
+    }
+
+    updatePageToolActiveState(0);
+
+    activeSectionObserver = new IntersectionObserver((entries) => {
+      const visibleEntries = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+      if (visibleEntries.length === 0) {
+        return;
+      }
+
+      const currentIndex = activeToolSections.findIndex((section) => section === visibleEntries[0].target);
+      if (currentIndex >= 0) {
+        updatePageToolActiveState(currentIndex);
+      }
+    }, {
+      root: null,
+      rootMargin: '-25% 0px -55% 0px',
+      threshold: 0.1
+    });
+
+    activeToolSections.forEach((section) => activeSectionObserver.observe(section));
   }
 
   function openExtraInfoModal() {
@@ -1873,10 +2130,17 @@
 
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.remove('active');
+      a.removeAttribute('aria-current');
+    });
     document.getElementById('page-' + id).classList.add('active');
     const nav = document.getElementById('nav-' + id);
-    if (nav) nav.classList.add('active');
+    if (nav) {
+      nav.classList.add('active');
+      nav.setAttribute('aria-current', 'page');
+    }
+    buildPageTools(id);
     window.location.hash = id;
     if (window.innerWidth <= 640) toggleNav(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1893,10 +2157,30 @@
 
   window.addEventListener('load', () => {
     const hash = window.location.hash.replace('#', '');
-    const allowed = ['inicio', 'politica', 'empleados', 'clientes', 'proveedores', 'arco'];
+    const allowed = pageOrder;
     if (allowed.includes(hash)) {
       showPage(hash);
+      return;
     }
+    const initialNav = document.getElementById('nav-inicio');
+    if (initialNav) {
+      initialNav.setAttribute('aria-current', 'page');
+    }
+    buildPageTools('inicio');
+  });
+
+  window.addEventListener('resize', () => {
+    if (pageOrder.includes(activeToolPageId)) {
+      buildPageTools(activeToolPageId);
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('is-visible', window.scrollY > 320);
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   document.addEventListener('keydown', (event) => {

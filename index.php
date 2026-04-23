@@ -36,29 +36,333 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    .index-page .main {
+      overflow: clip;
+    }
+
+    .floating-commit {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display: inline-flex;
+    }
+
+    .floating-commit__link {
+      display: block;
+      text-decoration: none;
+    }
+
+    .floating-commit__img {
+      width: min(220px, 28vw);
+      border-radius: 14px;
+      border: 1px solid rgba(0,230,118,0.2);
+      box-shadow: 0 0 0 0 rgba(0,230,118,0);
+      transition: box-shadow 0.3s ease, transform 0.15s ease, border-color 0.3s ease;
+      will-change: transform;
+      display: block;
+    }
+
+    .hero-landing {
+      min-height: 100vh;
+      max-height: none;
+      padding: 164px 0 108px;
+    }
+
+    .hero-landing::before {
+      background:
+        radial-gradient(circle at 15% 18%, rgba(0, 230, 118, 0.15), transparent 28%),
+        radial-gradient(circle at 84% 22%, rgba(52, 152, 219, 0.3), transparent 32%),
+        linear-gradient(135deg, rgba(3, 9, 18, 0.94), rgba(7, 23, 41, 0.78));
+    }
+
+    .hero-landing h2::after {
+      content: none;
+    }
+
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.86);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-landing-copy {
+      text-align: left;
+    }
+
+    .hero-landing-copy h2 {
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      line-height: 1.02;
+      margin-bottom: 18px;
+      font-family: var(--nav-font);
+    }
+
+    .hero-lead {
+      max-width: 680px;
+      margin: 0;
+      color: rgba(255,255,255,0.8);
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .hero-action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-primary-btn,
+    .hero-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 190px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hero-primary-btn {
+      background: linear-gradient(135deg, var(--accent-color), #0aa1ff);
+      color: #fff;
+      box-shadow: 0 18px 36px rgba(52, 152, 219, 0.28);
+    }
+
+    .hero-primary-btn:hover {
+      transform: translateY(-2px);
+      color: #fff;
+      box-shadow: 0 24px 40px rgba(52, 152, 219, 0.34);
+    }
+
+    .hero-secondary-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.24);
+      color: #fff;
+    }
+
+    .hero-secondary-btn:hover {
+      transform: translateY(-2px);
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-proof-card {
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.09);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-proof-card strong {
+      display: block;
+      color: #fff;
+      font-size: 1.7rem;
+      line-height: 1;
+      margin-bottom: 6px;
+      font-family: var(--heading-font);
+    }
+
+    .hero-proof-card span {
+      color: rgba(255,255,255,0.74);
+      font-size: 0.92rem;
+    }
+
+    .hero-focus-card {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(8,24,42,0.88), rgba(8,18,31,0.72));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.24);
+    }
+
+    .hero-focus-label {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--accent-color);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .hero-focus-card h3 {
+      color: #fff;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+
+    .hero-focus-card p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-focus-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-focus-card li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: rgba(255,255,255,0.84);
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
+    .hero-focus-card li i {
+      color: #8df4c7;
+      margin-top: 5px;
+    }
+
+    .home-about-copy .lead-copy {
+      color: color-mix(in srgb, var(--default-color), var(--contrast-color) 22%);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .about-highlight-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .about-highlight-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--default-color);
+      line-height: 1.75;
+    }
+
+    .about-highlight-list li i {
+      color: var(--accent-color);
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+
+    .cta-panel {
+      padding: 34px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+    }
+
+    .cta-panel h3 {
+      color: #fff;
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .cta-panel p {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      color: rgba(255,255,255,0.78);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 991px) {
+      .hero-landing {
+        padding: 148px 0 92px;
+      }
+
+      .hero-focus-card {
+        margin-top: 8px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .floating-commit {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .floating-commit__img {
+        width: min(160px, 40vw);
+      }
+
+      .hero-landing-copy {
+        text-align: center;
+      }
+
+      .hero-lead {
+        margin: 0 auto;
+      }
+
+      .hero-action-row {
+        justify-content: center;
+      }
+
+      .hero-primary-btn,
+      .hero-secondary-btn {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .hero-proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-panel {
+        padding: 26px 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .floating-commit__img,
+      .hero-primary-btn,
+      .hero-secondary-btn {
+        transition: none !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="index-page">
 
 
 <!-- LOGO FLOTANTE -->
-<div id="logo-float-wrap" style="display:inline-block; position:fixed; bottom:20px; right:20px; z-index:9999;">
-  <a href="https://commit.greenpc.dev" target="_blank" rel="noopener" id="logo-link"
-    style="display:block; text-decoration:none;">
+<div id="logo-float-wrap" class="floating-commit">
+  <a href="https://commit.greenpc.dev" target="_blank" rel="noopener" id="logo-link" class="floating-commit__link">
     <img
-      src="./assets/img/commit_logo.png" 
+      src="./assets/img/commit_logo.png"
       id="logo-float"
+      class="floating-commit__img"
       alt="COMMIT by GreenPC"
-      style="
-        width:220px;
-        max-width:28vw;
-        border-radius:14px;
-        border:1px solid rgba(0,230,118,0.2);
-        box-shadow:0 0 0 0 rgba(0,230,118,0);
-        transition:box-shadow 0.3s, transform 0.15s, border-color 0.3s;
-        will-change:transform;
-        display:block;
-      "
     />
   </a>
 </div>
@@ -67,50 +371,47 @@
 (function(){
   const logo = document.getElementById('logo-float');
   const link = document.getElementById('logo-link');
-  
+  if (!logo || !link) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canTilt = window.matchMedia('(pointer:fine)').matches && !reduceMotion;
   let currentScrollY = 0;
   let currentMouseX = 0;
   let currentMouseY = 0;
-  
+
   function updateTransform() {
-    // Combinar scroll + tilt
-    const scrollTranslate = currentScrollY * -0.01;
-    const scrollRotate = currentScrollY * 0.001;
-    const tiltX = currentMouseX * 12;
-    const tiltY = currentMouseY * -12;
-    
-    logo.style.transform = `
-      translateY(${scrollTranslate}px) 
-      rotate(${scrollRotate}deg) 
-      perspective(600px) 
-      rotateY(${tiltX}deg) 
-      rotateX(${tiltY}deg)
-    `;
+    const scrollTranslate = reduceMotion ? 0 : currentScrollY * -0.01;
+    const scrollRotate = reduceMotion ? 0 : currentScrollY * 0.001;
+    const tiltX = canTilt ? currentMouseX * 12 : 0;
+    const tiltY = canTilt ? currentMouseY * -12 : 0;
+
+    logo.style.transform = 'translateY(' + scrollTranslate + 'px) rotate(' + scrollRotate + 'deg) perspective(600px) rotateY(' + tiltX + 'deg) rotateX(' + tiltY + 'deg)';
   }
 
-  /* ── PARALLAX con scroll ── */
-  let ticking = false;
-  window.addEventListener('scroll', function(){
-    if(!ticking){
-      requestAnimationFrame(function(){
-        currentScrollY = window.scrollY;
-        updateTransform();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+  if (!reduceMotion) {
+    let ticking = false;
+    window.addEventListener('scroll', function(){
+      if(!ticking){
+        requestAnimationFrame(function(){
+          currentScrollY = window.scrollY;
+          updateTransform();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
 
-  /* ── TILT con movimiento del mouse ── */
-  document.addEventListener('mousemove', function(e){
-    const rect = logo.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    // Limitar valores entre -1 y 1 para evitar inclinación excesiva
-    currentMouseX = Math.min(Math.max((e.clientX - cx) / (window.innerWidth / 2), -1), 1);
-    currentMouseY = Math.min(Math.max((e.clientY - cy) / (window.innerHeight / 2), -1), 1);
-    updateTransform();
-  });
+  if (canTilt) {
+    document.addEventListener('mousemove', function(e){
+      const rect = logo.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      currentMouseX = Math.min(Math.max((e.clientX - cx) / (window.innerWidth / 2), -1), 1);
+      currentMouseY = Math.min(Math.max((e.clientY - cy) / (window.innerHeight / 2), -1), 1);
+      updateTransform();
+    });
+  }
 
   /* ── HOVER glow ── */
   link.addEventListener('mouseenter', function(){
@@ -120,7 +421,6 @@
   link.addEventListener('mouseleave', function(){
     logo.style.boxShadow = '0 0 0 0 rgba(0,230,118,0)';
     logo.style.borderColor = 'rgba(0,230,118,0.2)';
-    // Resetear tilt al salir (opcional)
     currentMouseX = 0;
     currentMouseY = 0;
     updateTransform();
@@ -172,19 +472,51 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section dark-background hero-landing">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/hero-bg.jpg" alt="Digital product background for Green PC" data-aos="fade-in">
 
       <div class="container">
-
-        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-xl-6 col-lg-8">
-            <h2>Powerful Digital Solutions</h2>
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7 hero-landing-copy" data-aos="fade-up" data-aos-delay="100">
+            <span class="hero-badge-pill"><i class="bi bi-stars"></i> Web, AI, UX and Security</span>
+            <h2>Powerful digital solutions for teams that need execution, not just ideas.</h2>
+            <p class="hero-lead">We design and build web platforms, AI workflows, UX systems, mobile apps and cybersecurity layers that help businesses move faster, simplify operations and launch with more confidence.</p>
+            <div class="hero-action-row">
+              <a class="hero-primary-btn" href="#services"><i class="bi bi-grid-1x2-fill"></i> Explore services</a>
+              <a class="hero-secondary-btn" href="#portfolio"><i class="bi bi-briefcase-fill"></i> See portfolio</a>
+            </div>
+            <div class="hero-proof-grid">
+              <div class="hero-proof-card">
+                <strong>600+</strong>
+                <span>clients across multiple industries</span>
+              </div>
+              <div class="hero-proof-card">
+                <strong>400+</strong>
+                <span>projects delivered and refined</span>
+              </div>
+              <div class="hero-proof-card">
+                <strong>AI + UX</strong>
+                <span>built into practical business systems</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="180">
+            <aside class="hero-focus-card">
+              <span class="hero-focus-label">What we build</span>
+              <h3>From concept to product launch.</h3>
+              <p>Green PC combines engineering, design and automation so each delivery solves a real workflow instead of becoming another disconnected tool.</p>
+              <ul>
+                <li><i class="bi bi-check2-circle"></i><span>Custom platforms for operations, content, education, legal and internal processes.</span></li>
+                <li><i class="bi bi-check2-circle"></i><span>AI-powered automation to reduce repetitive work and improve visibility.</span></li>
+                <li><i class="bi bi-check2-circle"></i><span>Product design and frontends that feel intentional, not generic.</span></li>
+                <li><i class="bi bi-check2-circle"></i><span>Security-minded development for systems that handle real business data.</span></li>
+              </ul>
+            </aside>
           </div>
         </div>
 
-        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4 mt-4 justify-content-center" data-aos="fade-up" data-aos-delay="220">
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <i class="bi bi-binoculars"></i>
@@ -234,22 +566,18 @@
 
         <div class="row gy-4">
           <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="Green PC team collaboration and technology strategy">
           </div>
-          <div class="col-lg-6 order-2 order-lg-1 content">
+          <div class="col-lg-6 order-2 order-lg-1 content home-about-copy">
             <h3>About Us</h3>
-            <p class="fst-italic">
-            At our company, we are passionate about harnessing technology to drive transformation and innovation. 
-            Founded on the belief that cutting-edge solutions can empower businesses, we specialize in web development, 
-            artificial intelligence, and comprehensive tech services that adapt to a rapidly evolving digital landscape.
-<br><br>
-            Our dedicated team of developers, AI specialists, and creative strategists work collaboratively to create bespoke 
-            solutions tailored to our clients’ unique needs. By blending technical expertise with a deep understanding of 
-            industry trends, we craft dynamic websites, streamline operations, and unlock new avenues for growth.
-<br><br>
-            Innovation, quality, and integrity are at the heart of what we do. Join us on our journey to revolutionize the 
-            digital world—one breakthrough solution at a time.
-            </p>  
+            <p class="lead-copy">We work at the intersection of software engineering, product design and AI implementation. Our goal is straightforward: help organizations turn complex ideas into digital systems people can actually use, scale and trust.</p>
+            <p class="lead-copy">Instead of offering disconnected services, we treat research, development, UX, automation and security as parts of the same delivery pipeline. That makes the final product more coherent and easier to grow.</p>
+            <ul class="about-highlight-list">
+              <li><i class="bi bi-check2"></i><span>Custom development tailored to business workflows, not generic templates.</span></li>
+              <li><i class="bi bi-check2"></i><span>AI and automation designed to remove friction and surface better decisions.</span></li>
+              <li><i class="bi bi-check2"></i><span>UX thinking applied from the first draft through implementation.</span></li>
+              <li><i class="bi bi-check2"></i><span>Technical rigor focused on performance, maintainability and security.</span></li>
+            </ul>
           </div>
         </div>
 
@@ -704,12 +1032,14 @@
 <!-- Call To Action Section -->
 <section id="call-to-action" class="call-to-action section dark-background">
 
-  <img src="assets/img/cta-bg.jpg" alt="">
+  <img src="assets/img/cta-bg.jpg" alt="Background for Green PC contact section">
 
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xl-10">
-        <div class="text-center">
+        <div class="text-center cta-panel" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Need a clearer roadmap for your next digital product?</h3>
+          <p>Tell us what you need to build, automate, redesign or secure. We can help define scope, priorities and the right technology mix before the project turns into noise.</p>
           <a class="cta-btn btn-lg" href="https://wa.link/hczezg"> <i class="bi bi-whatsapp"></i> Contact Us</a>
         </div>
       </div>

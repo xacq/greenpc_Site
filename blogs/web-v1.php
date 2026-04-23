@@ -7,12 +7,11 @@ $audioFile = '../audio/articles/' . $articleId . '.mp3';
 $audioTitle = $articleTitle;
 $audioImage = '../assets/img/audio.jpg'; // Imagen por defecto si no se proporciona una
 $audioDuration = '3.25'; // Podrías calcular esto con PHP o JS
+$pageTitle = 'Web 2025 - Green PC';
+$pageDescription = 'Resumen de tendencias clave en desarrollo web para 2025: IA, WebAssembly, PWA, accesibilidad y plataformas low-code/no-code.';
 
 include_once '../assets/includes/head-es-blog.php'; // Include the header file
 ?>
-
-  <title>Web 2025 - Green PC</title>
-
 
 <?php
 include_once '../assets/includes/header-es-blog.php';
@@ -22,7 +21,7 @@ include_once '../assets/includes/header-es-blog.php';
 
 
     <section id="hero" class="hero section dark-background">
-      <img src="../assets/img/blog/web-2025-bg.jpg" alt="" data-aos="fade-in">
+      <img src="../assets/img/blog/web-2025-bg.jpg" alt="Visual del articulo sobre tendencias de desarrollo web 2025" data-aos="fade-in">
         <div class="container text-center">
           <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-xl-6 col-lg-8">
@@ -467,95 +466,3 @@ include_once '../assets/includes/header-es-blog.php';
     include_once '../assets/includes/footer-es-blog.php';
 
 ?>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const audioPlayer = new Audio('audio/article-audio.mp3');
-    const playPauseBtn = document.querySelector('.btn-audio-play-pause');
-    const playBtn = document.querySelector('.btn-audio-play');
-    const backwardBtn = document.querySelector('.btn-audio-backward');
-    const forwardBtn = document.querySelector('.btn-audio-forward');
-    const progressBar = document.querySelector('.progress-bar');
-    const currentTimeEl = document.querySelector('.audio-current-time');
-    const durationEl = document.querySelector('.audio-duration');
-    const speedBtns = document.querySelectorAll('[data-speed]');
-    
-    // Formatear tiempo a MM:SS
-    function formatTime(seconds) {
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-    }
-    
-    // Actualizar barra de progreso y tiempo
-    function updateProgress() {
-        const { currentTime, duration } = audioPlayer;
-        const progressPercent = (currentTime / duration) * 100;
-        progressBar.style.width = `${progressPercent}%`;
-        currentTimeEl.textContent = formatTime(currentTime);
-    }
-    
-    // Actualizar duración total
-    audioPlayer.addEventListener('loadedmetadata', () => {
-        durationEl.textContent = formatTime(audioPlayer.duration);
-    });
-    
-    // Play/Pause
-    function togglePlayPause() {
-        if (audioPlayer.paused) {
-            audioPlayer.play();
-            playPauseBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
-            playBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
-        } else {
-            audioPlayer.pause();
-            playPauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
-            playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
-        }
-    }
-    
-    playPauseBtn.addEventListener('click', togglePlayPause);
-    playBtn.addEventListener('click', togglePlayPause);
-    
-    // Retroceder 15 segundos
-    backwardBtn.addEventListener('click', () => {
-        audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 15);
-    });
-    
-    // Adelantar 15 segundos
-    forwardBtn.addEventListener('click', () => {
-        audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 15);
-    });
-    
-    // Click en la barra de progreso
-    document.querySelector('.progress').addEventListener('click', (e) => {
-        const width = e.target.clientWidth;
-        const clickX = e.offsetX;
-        const duration = audioPlayer.duration;
-        audioPlayer.currentTime = (clickX / width) * duration;
-    });
-    
-    // Actualizar progreso continuamente
-    audioPlayer.addEventListener('timeupdate', updateProgress);
-    
-    // Cambiar velocidad
-    speedBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const speed = parseFloat(this.getAttribute('data-speed'));
-            audioPlayer.playbackRate = speed;
-            
-            // Actualizar UI
-            document.querySelector('#audioSpeedDropdown').textContent = `Velocidad: ${speed}x`;
-            speedBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-    
-    // Reiniciar icono cuando termina
-    audioPlayer.addEventListener('ended', () => {
-        playPauseBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
-        playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
-    });
-});
-</script>

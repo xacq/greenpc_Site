@@ -17,7 +17,7 @@
                     <h3 class="h5 mb-2"><?= htmlspecialchars($audioTitle) ?></h3>
                     <div class="d-flex flex-column">
                         <!-- Barra de progreso clickeable -->
-                        <div class="progress mb-2 progress-container" style="height: 6px; cursor: pointer;">
+                        <div class="progress mb-2 audio-progress-container" style="height: 6px; cursor: pointer;">
                             <div class="progress-bar bg-primary progress-bar-audio" 
                                  role="progressbar" 
                                  style="width: 0%" 

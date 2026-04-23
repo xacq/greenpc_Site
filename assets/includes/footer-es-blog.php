@@ -25,11 +25,11 @@
       <div class="col-lg-4 col-md-4 footer-links">
         <h4>Nuestra Página</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#"> Inicio</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#about"> Sobre Nosotros</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services"> Servicios</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#portfolio"> Portafolio</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#clients"> Tecnologías</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="../index.php#hero"> Inicio</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="../index.php#about"> Sobre Nosotros</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="../index.php#services"> Servicios</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="../index.php#portfolio"> Portafolio</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="../index.php#clients"> Tecnologías</a></li>
         </ul>
       </div>
 
@@ -65,7 +65,6 @@
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
-<!--script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script-->
 <script src="../assets/vendor/php-email-form/validate.js"></script>
 <script src="../assets/vendor/aos/aos.js"></script>
 <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -77,26 +76,39 @@
 <!-- Main JS File -->
 <script src="../assets/js/main.js"></script>
 
-<!-- Chart.js para gráficos -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const readingProgressBar = document.getElementById('myBar');
+
+    if (readingProgressBar) {
+        const updateReadingProgress = function () {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            readingProgressBar.style.width = scrolled + '%';
+        };
+
+        updateReadingProgress();
+        window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    }
+
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
     // Elementos del DOM
     const audioPlayer = new Audio('<?= htmlspecialchars($audioFile) ?>');
     const playPauseBtn = document.querySelector('.btn-audio-play-pause');
     const progressBar = document.querySelector('.progress-bar-audio');
-    const progressContainer = document.querySelector('.progress-container');
+    const progressContainer = document.querySelector('.audio-progress-container');
     const currentTimeEl = document.querySelector('.audio-current-time');
     const durationEl = document.querySelector('.audio-duration');
     
     // Verificar si los elementos existen
-    if (!audioPlayer || !playPauseBtn || !progressBar || !progressContainer) {
-        console.error('Error: Elementos del reproductor no encontrados');
+    if (!playPauseBtn || !progressBar || !progressContainer || !currentTimeEl || !durationEl) {
         return;
     }
     
@@ -126,7 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Manejar errores
     audioPlayer.addEventListener('error', function() {
         console.error('Error de audio:', audioPlayer.error);
-        alert('Error al cargar el audio. Verifica la consola para más detalles.');
+        playPauseBtn.setAttribute('disabled', 'disabled');
+        playPauseBtn.innerHTML = '<i class="bi bi-volume-mute-fill"></i>';
     });
     
     // Control Play/Pause

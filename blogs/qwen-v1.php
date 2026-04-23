@@ -7,11 +7,11 @@ $audioFile = '../audio/articles/' . $articleId . '.mp3';
 $audioTitle = $articleTitle;
 $audioImage = '../assets/img/audio.jpg'; // Imagen por defecto si no se proporciona una
 $audioDuration = '3.25'; // Podrías calcular esto con PHP o JS
+$pageTitle = 'QWEN - Green PC';
+$pageDescription = 'Analisis de QWEN, el modelo de Alibaba que impulsa la competencia global en inteligencia artificial con enfoque multimodal y arquitectura avanzada.';
 
-    include '../assets/includes/head-es-blog.php';
+include '../assets/includes/head-es-blog.php';
 ?>
-
-  <title>QWEN - Green PC</title>
 
   <?php
 include_once '../assets/includes/header-es-blog.php';
@@ -19,7 +19,7 @@ include_once '../assets/includes/header-es-blog.php';
 
 
     <section id="hero" class="hero section dark-background">
-        <img src="../assets/img/blog/qwen-bg.jpg" alt="" data-aos="fade-in">
+        <img src="../assets/img/blog/qwen-bg.jpg" alt="Visual del articulo sobre QWEN y la inteligencia artificial china" data-aos="fade-in">
         <div class="container text-center">
         <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-xl-6 col-lg-8">
@@ -380,13 +380,61 @@ include_once '../assets/includes/header-es-blog.php';
     </div>
 
 
-
-    </section>
-
-
   </main>
 
 
   <?php 
     include '../assets/includes/footer-es-blog.php';
 ?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const canvas = document.getElementById('performanceChart');
+    if (!canvas) return;
+
+    new Chart(canvas.getContext('2d'), {
+        type: 'radar',
+        data: {
+            labels: ['Razonamiento', 'Codigo', 'Multimodalidad', 'Velocidad', 'Escalabilidad'],
+            datasets: [
+                {
+                    label: 'QWEN 2.5-Max',
+                    data: [91, 88, 90, 86, 89],
+                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    pointBackgroundColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 2
+                },
+                {
+                    label: 'Promedio LLM competitivo',
+                    data: [84, 82, 80, 81, 83],
+                    backgroundColor: 'rgba(127, 140, 141, 0.14)',
+                    borderColor: 'rgba(127, 140, 141, 1)',
+                    pointBackgroundColor: 'rgba(127, 140, 141, 1)',
+                    borderWidth: 2
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    suggestedMax: 100,
+                    pointLabels: {
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+});
+</script>
