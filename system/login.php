@@ -78,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 <?php endif; ?>
 
+
 <div class="container mt-5 text-center">
 <img src="../assets/img/logo.png" alt="" class="img-fluid mb-4" width="250px">
     <div class="row justify-content-center">
@@ -116,6 +117,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<?php 
-include './includes/footer.php'; 
+<?php
+$back_fallback = '../index_es.php';
+include './includes/back_button.php';
 ?>
+<?php include './includes/footer.php'; ?>

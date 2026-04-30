@@ -215,6 +215,7 @@ include './includes/head.php';
     }
 </style>
 
+
 <main class="privacy-page">
     <div class="container">
         <section class="privacy-hero">
@@ -382,4 +383,8 @@ include './includes/head.php';
     </div>
 </main>
 
+<?php
+$back_fallback = '../index_es.php';
+include './includes/back_button.php';
+?>
 <?php include './includes/footer.php'; ?>

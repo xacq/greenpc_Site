@@ -956,7 +956,11 @@ $solutionCount = count($solutions);
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="./index_es.php">Inicio</a></li>
+          <li><a href="./index_es.php#hero">Inicio</a></li>
+          <li><a href="./index_es.php#about">Acerca de</a></li>
+          <li><a href="./index_es.php#services">Servicios</a></li>
+          <li><a href="./index_es.php#portfolio">Portafolio</a></li>
+          <li><a href="./blog.php">Blogs</a></li>
           <li><a href="./programacion.php" class="active">Programacion</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

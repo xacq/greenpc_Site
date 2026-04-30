@@ -10,7 +10,7 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -35,17 +35,35 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="./index.php" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="./assets/img/logo.png" alt="">
+      <a href="./index_es.php" class="logo d-flex align-items-center me-auto me-lg-0">
+        <img src="./assets/img/logo.png" alt="Logo Green PC">
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="./index.php">Inicio<br></a></li>
+          <li><a href="./index_es.php#hero">Inicio<br></a></li>
+          <li><a href="./index_es.php#about">Acerca de</a></li>
+          <li><a href="./index_es.php#services">Servicios</a></li>
+          <li><a href="./index_es.php#portfolio">Portafolio</a></li>
           <li><a href="./blog.php" class="active">Blogs<br></a></li>
+          <li><a href="./programacion.php">Programación</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="./system/index.php"> <i class="bi bi-app-indicator"></i> Login</a>
+      <a class="btn-getstarted" href="./index.php"> <i class="bi bi-translate"></i> English</a>
     </div>
   </header>
+
+<!-- Fix: mantiene el ítem 'Blogs' activo aunque el scroll-spy intente cambiarlo -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Espera a que el JS del tema termine de inicializarse
+    setTimeout(function () {
+      var navLinks = document.querySelectorAll('#navmenu a');
+      navLinks.forEach(function (a) { a.classList.remove('active'); });
+      var blogsLink = document.querySelector('#navmenu a[href="./blog.php"]');
+      if (blogsLink) blogsLink.classList.add('active');
+    }, 100);
+  });
+</script>
+

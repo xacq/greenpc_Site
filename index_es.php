@@ -271,6 +271,358 @@
       font-size: 1rem;
     }
 
+    .pricing-showcase {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-showcase::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(0, 230, 118, 0.08), transparent 24%),
+        radial-gradient(circle at 88% 18%, rgba(52, 152, 219, 0.12), transparent 28%),
+        linear-gradient(180deg, #f7fbff 0%, #eef5fb 100%);
+      pointer-events: none;
+    }
+
+    .pricing-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-intro {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .pricing-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(52, 152, 219, 0.1);
+      color: #1e88d8;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+
+    .pricing-intro h2 {
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.06;
+      margin-bottom: 16px;
+    }
+
+    .pricing-intro p {
+      color: #5a6a7e;
+      line-height: 1.85;
+      margin-bottom: 0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .pricing-card {
+      position: relative;
+      padding: 28px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(52, 152, 219, 0.12);
+      box-shadow: 0 24px 60px rgba(15, 42, 71, 0.1);
+      backdrop-filter: blur(10px);
+      height: 100%;
+    }
+
+    .pricing-card--featured {
+      background: linear-gradient(180deg, rgba(10, 24, 44, 0.98), rgba(7, 22, 40, 0.92));
+      border-color: rgba(255,255,255,0.08);
+      transform: translateY(-8px);
+    }
+
+    .pricing-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .pricing-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      color: #fff;
+      background: linear-gradient(135deg, #3498db, #0aa1ff);
+      box-shadow: 0 16px 34px rgba(52, 152, 219, 0.28);
+    }
+
+    .pricing-card--featured .pricing-icon {
+      background: linear-gradient(135deg, #00d26a, #0aa1ff);
+      box-shadow: 0 18px 38px rgba(0, 210, 106, 0.22);
+    }
+
+    .pricing-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1e88d8;
+      background: rgba(52, 152, 219, 0.1);
+    }
+
+    .pricing-card--featured .pricing-tag {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .pricing-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+
+    .pricing-card p {
+      color: #5a6a7e;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card--featured h3,
+    .pricing-card--featured p,
+    .pricing-card--featured li,
+    .pricing-card--featured .pricing-base-label,
+    .pricing-card--featured .payment-copy,
+    .pricing-card--featured .payment-note {
+      color: rgba(255,255,255,0.86);
+    }
+
+    .pricing-base {
+      margin-bottom: 20px;
+    }
+
+    .pricing-base-label {
+      display: block;
+      color: #6d7e92;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .pricing-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: var(--heading-font);
+      color: #0f2742;
+    }
+
+    .pricing-card--featured .pricing-amount {
+      color: #fff;
+    }
+
+    .pricing-amount strong {
+      font-size: clamp(2.2rem, 5vw, 3.3rem);
+      line-height: 1;
+    }
+
+    .pricing-amount span {
+      font-size: 0.92rem;
+      color: #6d7e92;
+    }
+
+    .pricing-card--featured .pricing-amount span {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .pricing-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .pricing-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #415468;
+      line-height: 1.7;
+    }
+
+    .pricing-list i {
+      color: #00c96b;
+      margin-top: 5px;
+    }
+
+    .payment-box {
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: rgba(5, 25, 48, 0.04);
+      border: 1px solid rgba(52, 152, 219, 0.1);
+    }
+
+    .pricing-card--featured .payment-box {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    .payment-title {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #0f2742;
+    }
+
+    .pricing-card--featured .payment-title {
+      color: #fff;
+    }
+
+    .payment-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .payment-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(52, 152, 219, 0.12);
+      color: #10314f;
+      font-size: 0.83rem;
+      font-weight: 700;
+    }
+
+    .payment-logo i {
+      font-size: 1rem;
+      color: #1e88d8;
+    }
+
+    .payment-copy,
+    .payment-note {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .payment-note {
+      margin-top: 8px;
+      color: #6d7e92;
+    }
+
+    @media (max-width: 991px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card--featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .pricing-showcase {
+        padding-top: 56px;
+        padding-bottom: 56px;
+      }
+
+      .pricing-intro {
+        margin-bottom: 26px;
+      }
+
+      .pricing-intro h2 {
+        font-size: clamp(1.7rem, 8vw, 2.35rem);
+        line-height: 1.12;
+      }
+
+      .pricing-card {
+        padding: 22px 18px;
+        border-radius: 22px;
+      }
+
+      .pricing-topline {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 18px;
+      }
+
+      .pricing-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        font-size: 1.15rem;
+      }
+
+      .pricing-card h3 {
+        font-size: 1.25rem;
+      }
+
+      .pricing-amount {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .pricing-amount strong {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+      }
+
+      .payment-box {
+        padding: 16px 14px 14px;
+        border-radius: 18px;
+      }
+
+      .payment-logos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .payment-logo {
+        justify-content: center;
+        width: 100%;
+        min-width: 0;
+        padding: 9px 10px;
+        font-size: 0.76rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .pricing-card {
+        padding: 20px 16px;
+      }
+
+      .payment-logos {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-logo {
+        font-size: 0.8rem;
+      }
+    }
+
     .cta-panel {
       padding: 34px;
       border-radius: 30px;
@@ -439,6 +791,7 @@
           <li><a href="#hero" class="active">Inicio<br></a></li>
           <li><a href="#about">Acerca de</a></li>
           <li><a href="#services">Servicios</a></li>
+          <li><a href="#pricing">Precios</a></li>
           <li><a href="#portfolio">Portafolio</a></li>
           <li><a href="./blog.php">Blogs</a></li>
           <li><a href="./programacion.php">Programación</a></li>
@@ -709,6 +1062,105 @@
       </div>
 
     </section><!-- /Sección de Servicios -->
+
+    <section id="pricing" class="pricing-showcase section">
+      <div class="container pricing-shell">
+        <div class="pricing-intro" data-aos="fade-up">
+          <span class="pricing-kicker"><i class="bi bi-cash-coin"></i> Cotización base</span>
+          <h2>Tres puntos de partida comunes para proyectos que necesitan alcance claro y una decisión rápida.</h2>
+          <p>Estos valores son referenciales para una primera etapa. El precio final depende de complejidad, integraciones, profundidad del diseño, infraestructura y velocidad de entrega.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="pricing-topline">
+              <span class="pricing-icon"><i class="bi bi-window-stack"></i></span>
+              <span class="pricing-tag">Web</span>
+            </div>
+            <h3>Páginas web</h3>
+            <p>Ideal para landing pages, catálogos, sitios de servicios y webs corporativas pequeñas que necesitan buena presentación y una base técnica sólida.</p>
+            <div class="pricing-base">
+              <span class="pricing-base-label">Cotización base desde</span>
+              <div class="pricing-amount"><strong>150 USD</strong><span>alcance inicial</span></div>
+            </div>
+            <ul class="pricing-list">
+              <li><i class="bi bi-check2-circle"></i><span>Diseño responsive y dirección visual moderna.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Páginas clave, contacto y estructura lista para publicar.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Adecuado para lanzamiento, validación o posicionamiento de servicios.</span></li>
+            </ul>
+            <div class="payment-box">
+              <span class="payment-title">Métodos de pago</span>
+              <div class="payment-logos">
+                <span class="payment-logo"><i class="bi bi-bank"></i> Transferencia</span>
+                <span class="payment-logo"><i class="bi bi-currency-bitcoin"></i> Bitcoin</span>
+                <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
+                <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
+              </div>
+              <p class="payment-copy">Recibimos transferencias, Bitcoin, PayPal y Western Union.</p>
+              <p class="payment-note">PayPal puede requerir un pequeño ajuste en el precio por comisiones y conversión.</p>
+            </div>
+          </article>
+
+          <article class="pricing-card pricing-card--featured" data-aos="fade-up" data-aos-delay="120">
+            <div class="pricing-topline">
+              <span class="pricing-icon"><i class="bi bi-diagram-3"></i></span>
+              <span class="pricing-tag">Operación</span>
+            </div>
+            <h3>Sistemas de control</h3>
+            <p>Pensado para dashboards, herramientas internas, paneles administrativos, flujos operativos y plataformas de control con datos reales de negocio.</p>
+            <div class="pricing-base">
+              <span class="pricing-base-label">Cotización base desde</span>
+              <div class="pricing-amount"><strong>800 USD</strong><span>alcance inicial</span></div>
+            </div>
+            <ul class="pricing-list">
+              <li><i class="bi bi-check2-circle"></i><span>Flujos por roles, trazabilidad de datos y vistas administrativas.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Más adecuado para control, productividad y ejecución interna.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Escalable hacia módulos, reportes y automatizaciones personalizadas.</span></li>
+            </ul>
+            <div class="payment-box">
+              <span class="payment-title">Métodos de pago</span>
+              <div class="payment-logos">
+                <span class="payment-logo"><i class="bi bi-bank"></i> Transferencia</span>
+                <span class="payment-logo"><i class="bi bi-currency-bitcoin"></i> Bitcoin</span>
+                <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
+                <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
+              </div>
+              <p class="payment-copy">Recibimos transferencias, Bitcoin, PayPal y Western Union.</p>
+              <p class="payment-note">PayPal puede requerir un pequeño ajuste en el precio por comisiones y conversión.</p>
+            </div>
+          </article>
+
+          <article class="pricing-card" data-aos="fade-up" data-aos-delay="190">
+            <div class="pricing-topline">
+              <span class="pricing-icon"><i class="bi bi-stars"></i></span>
+              <span class="pricing-tag">IA</span>
+            </div>
+            <h3>Integraciones con IA</h3>
+            <p>Orientado a equipos que necesitan asistentes, flujos automáticos, formularios enriquecidos con IA, procesamiento documental o soporte operativo sobre sistemas existentes.</p>
+            <div class="pricing-base">
+              <span class="pricing-base-label">Cotización base desde</span>
+              <div class="pricing-amount"><strong>400 USD</strong><span>alcance inicial</span></div>
+            </div>
+            <ul class="pricing-list">
+              <li><i class="bi bi-check2-circle"></i><span>Conecta IA a procesos actuales en lugar de sumar otra herramienta aislada.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Útil para soporte, clasificación, resúmenes y tareas repetitivas.</span></li>
+              <li><i class="bi bi-check2-circle"></i><span>Se puede integrar con webs, sistemas administrativos o procesos internos.</span></li>
+            </ul>
+            <div class="payment-box">
+              <span class="payment-title">Métodos de pago</span>
+              <div class="payment-logos">
+                <span class="payment-logo"><i class="bi bi-bank"></i> Transferencia</span>
+                <span class="payment-logo"><i class="bi bi-currency-bitcoin"></i> Bitcoin</span>
+                <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
+                <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
+              </div>
+              <p class="payment-copy">Recibimos transferencias, Bitcoin, PayPal y Western Union.</p>
+              <p class="payment-note">PayPal puede requerir un pequeño ajuste en el precio por comisiones y conversión.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <!-- Sección de Portafolio -->
     <section id="portfolio" class="portfolio section">
