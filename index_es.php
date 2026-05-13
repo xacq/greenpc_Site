@@ -1096,7 +1096,7 @@
                 <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
                 <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
               </div>
-              <p class="payment-copy">Recibimos transferencias, Bitcoin, PayPal y Western Union.</p>
+             
               <p class="payment-note">PayPal puede requerir un pequeño ajuste en el precio por comisiones y conversión.</p>
             </div>
           </article>
@@ -1125,7 +1125,7 @@
                 <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
                 <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
               </div>
-              <p class="payment-copy">Recibimos transferencias, Bitcoin, PayPal y Western Union.</p>
+             
               <p class="payment-note">PayPal puede requerir un pequeño ajuste en el precio por comisiones y conversión.</p>
             </div>
           </article>
@@ -1154,7 +1154,7 @@
                 <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
                 <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
               </div>
-              <p class="payment-copy">Recibimos transferencias, Bitcoin, PayPal y Western Union.</p>
+             
               <p class="payment-note">PayPal puede requerir un pequeño ajuste en el precio por comisiones y conversión.</p>
             </div>
           </article>

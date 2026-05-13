@@ -1121,7 +1121,6 @@
                 <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
                 <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
               </div>
-              <p class="payment-copy">We accept bank transfers, Bitcoin, PayPal and Western Union.</p>
               <p class="payment-note">PayPal may require a price adjustment to cover platform fees and conversion costs.</p>
             </div>
           </article>
@@ -1135,7 +1134,7 @@
             <p>Designed for dashboards, internal tools, administrative panels, operational workflows and control platforms with real business data.</p>
             <div class="pricing-base">
               <span class="pricing-base-label">Base quote from</span>
-              <div class="pricing-amount"><strong>850 USD</strong><span>starting scope</span></div>
+              <div class="pricing-amount"><strong>800 USD</strong><span>starting scope</span></div>
             </div>
             <ul class="pricing-list">
               <li><i class="bi bi-check2-circle"></i><span>Role-based workflows, data tracking and admin views.</span></li>
@@ -1150,7 +1149,6 @@
                 <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
                 <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
               </div>
-              <p class="payment-copy">We accept bank transfers, Bitcoin, PayPal and Western Union.</p>
               <p class="payment-note">PayPal may require a price adjustment to cover platform fees and conversion costs.</p>
             </div>
           </article>
@@ -1179,7 +1177,6 @@
                 <span class="payment-logo"><i class="bi bi-paypal"></i> PayPal</span>
                 <span class="payment-logo"><i class="bi bi-cash-stack"></i> Western Union</span>
               </div>
-              <p class="payment-copy">We accept bank transfers, Bitcoin, PayPal and Western Union.</p>
               <p class="payment-note">PayPal may require a price adjustment to cover platform fees and conversion costs.</p>
             </div>
           </article>

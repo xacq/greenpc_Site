@@ -191,6 +191,19 @@ $solutions = [
     ],
 ];
 
+$musicastScreens = [
+    ['icon' => 'bi bi-music-note-beamed', 'name' => 'Splash / Bienvenida'],
+    ['icon' => 'bi bi-person-plus-fill',  'name' => 'Registro Cliente / Proveedor'],
+    ['icon' => 'bi bi-shield-lock-fill',  'name' => 'Login con autenticacion social'],
+    ['icon' => 'bi bi-house-heart-fill',  'name' => 'Home con categorias y proveedores'],
+    ['icon' => 'bi bi-funnel-fill',       'name' => 'Busqueda con filtros por genero'],
+    ['icon' => 'bi bi-images',            'name' => 'Detalle del proveedor con galeria'],
+    ['icon' => 'bi bi-calendar2-check',   'name' => 'Formulario de reserva (paso 1/3)'],
+    ['icon' => 'bi bi-credit-card-2-front-fill', 'name' => 'Pasarela de pago (3 metodos)'],
+    ['icon' => 'bi bi-patch-check-fill',  'name' => 'Confirmacion con numero de reserva'],
+    ['icon' => 'bi bi-person-circle',     'name' => 'Perfil completo del usuario'],
+];
+
 $videoModals = [
     [
         'id' => 'videoModalRisk',
@@ -646,6 +659,259 @@ $solutionCount = count($solutions);
       gap: 10px;
     }
 
+    /* ── MUSICAST special section ── */
+    .musicast-section {
+      background: linear-gradient(160deg, #0a0a0f 0%, #10080e 40%, #0d0b00 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .musicast-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(212, 160, 23, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 20%, rgba(180, 60, 120, 0.10) 0%, transparent 45%),
+        radial-gradient(ellipse at 60% 90%, rgba(212, 160, 23, 0.07) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .musicast-section .section-title h2 {
+      color: #fff;
+    }
+
+    .musicast-section .section-title p {
+      color: rgba(255,255,255,0.68);
+    }
+
+    .musicast-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 160, 23, 0.45);
+      background: rgba(212, 160, 23, 0.10);
+      color: #f0c040;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .musicast-headline {
+      font-family: var(--heading-font);
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .musicast-headline span {
+      background: linear-gradient(90deg, #f0c040, #e07b30, #f0c040);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: musicastShine 4s linear infinite;
+    }
+
+    @keyframes musicastShine {
+      to { background-position: 200% center; }
+    }
+
+    .musicast-tagline {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      max-width: 540px;
+      margin-bottom: 28px;
+    }
+
+    .musicast-nav-info {
+      padding: 18px 22px;
+      border-radius: 18px;
+      background: rgba(212, 160, 23, 0.08);
+      border: 1px solid rgba(212, 160, 23, 0.22);
+      color: rgba(255,255,255,0.80);
+      font-size: 0.93rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .musicast-nav-info strong {
+      color: #f0c040;
+    }
+
+    .musicast-screens-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .musicast-screen-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212, 160, 23, 0.14);
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .musicast-screen-item:hover {
+      background: rgba(212, 160, 23, 0.10);
+      border-color: rgba(212, 160, 23, 0.35);
+    }
+
+    .musicast-screen-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4a017, #e07b30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #0a0a0f;
+    }
+
+    .musicast-screen-icon {
+      color: #f0c040;
+      font-size: 1rem;
+    }
+
+    .musicast-screen-name {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .musicast-palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .musicast-palette-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      border: 1px solid;
+    }
+
+    .musicast-chip-dark {
+      background: rgba(10,10,15,0.8);
+      color: rgba(255,255,255,0.88);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .musicast-chip-gold {
+      background: rgba(212, 160, 23, 0.15);
+      color: #f0c040;
+      border-color: rgba(212, 160, 23, 0.40);
+    }
+
+    .musicast-chip-type {
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.78);
+      border-color: rgba(255,255,255,0.10);
+    }
+
+    .musicast-chip-gradient {
+      background: linear-gradient(135deg, rgba(212,160,23,0.12), rgba(180,60,120,0.12));
+      color: rgba(255,255,255,0.84);
+      border-color: rgba(212,160,23,0.25);
+    }
+
+    .musicast-img-frame {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(212, 160, 23, 0.25),
+        0 40px 100px rgba(0,0,0,0.55),
+        0 0 80px rgba(212, 160, 23, 0.08);
+    }
+
+    .musicast-img-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
+    }
+
+    .musicast-img-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(10,8,0,0.80);
+      border: 1px solid rgba(212,160,23,0.40);
+      backdrop-filter: blur(12px);
+      color: #f0c040;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .musicast-img-screens-badge {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      background: rgba(10,8,0,0.82);
+      border: 1px solid rgba(212,160,23,0.30);
+      backdrop-filter: blur(12px);
+    }
+
+    .musicast-img-screens-badge strong {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #f0c040;
+      line-height: 1;
+    }
+
+    .musicast-img-screens-badge span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.3;
+    }
+
+    .musicast-glow-line {
+      position: absolute;
+      inset: auto 0 -1px 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(212,160,23,0.6), transparent);
+    }
+
+    @media (max-width: 991px) {
+      .musicast-img-frame img { min-height: 340px; }
+      .musicast-screens-grid { grid-template-columns: 1fr; }
+    }
+    /* ── END MUSICAST ── */
+
     .program-process {
       background: linear-gradient(180deg, #071727, #0b2236);
     }
@@ -1091,6 +1357,85 @@ $solutionCount = count($solutions);
         <?php endforeach; ?>
       </div>
     </section>
+
+    <!-- ══════════════ MUSICAST SECTION ══════════════ -->
+    <section id="musicast" class="section musicast-section dark-background">
+      <div class="musicast-glow-line" style="top:0;bottom:auto;"></div>
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>App Movil Destacada</h2>
+        <p>Una experiencia completa, disenada con identidad y flujo reales</p>
+      </div>
+
+      <div class="container">
+        <div class="row align-items-center gy-5">
+
+          <!-- LEFT: image -->
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+            <div class="musicast-img-frame">
+              <img src="assets/img/services/musicast.jpg" alt="MUSICAST — App movil para reserva de servicios musicales" loading="lazy">
+              <div class="musicast-img-badge">
+                <i class="bi bi-music-note-beamed"></i> MUSICAST
+              </div>
+              <div class="musicast-img-screens-badge">
+                <strong>10</strong>
+                <span>pantallas<br>del flujo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: content -->
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="160">
+            <span class="musicast-eyebrow"><i class="bi bi-music-note-list"></i> App Movil &mdash; Marketplace Musical</span>
+            <h3 class="musicast-headline">Reserva tu <span>sonido perfecto</span></h3>
+            <p class="musicast-tagline">
+              Plataforma movil que conecta clientes con proveedores de servicios musicales: desde la busqueda por genero hasta el pago y la confirmacion, todo en una experiencia pulida y cohesiva.
+            </p>
+
+            <div class="musicast-nav-info">
+              <strong>Navegacion interactiva</strong> &mdash; puedes moverte entre pantallas con los botones del nav superior, las flechas del panel derecho, o haciendo clic en los botones internos de la app (ej: &ldquo;Reservar&rdquo; te lleva a la pantalla de reserva, &ldquo;Comenzar&rdquo; al registro, etc.).
+            </div>
+
+            <p style="color:rgba(255,255,255,0.62); font-size:0.88rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">Las 10 pantallas del flujo completo</p>
+            <div class="musicast-screens-grid">
+              <?php foreach ($musicastScreens as $i => $screen): ?>
+                <div class="musicast-screen-item">
+                  <span class="musicast-screen-num"><?= $i + 1 ?></span>
+                  <i class="musicast-screen-icon <?= htmlspecialchars($screen['icon']) ?>"></i>
+                  <span class="musicast-screen-name"><?= htmlspecialchars($screen['name']) ?></span>
+                </div>
+              <?php endforeach; ?>
+            </div>
+
+            <p style="color:rgba(255,255,255,0.62); font-size:0.88rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">Paleta de diseno</p>
+            <div class="musicast-palette">
+              <span class="musicast-palette-chip musicast-chip-dark"><i class="bi bi-circle-fill" style="font-size:0.7rem;"></i> Fondo oscuro</span>
+              <span class="musicast-palette-chip musicast-chip-gold"><i class="bi bi-circle-fill" style="font-size:0.7rem;"></i> Acento dorado</span>
+              <span class="musicast-palette-chip musicast-chip-type"><i class="bi bi-type"></i> Tipografia limpia</span>
+              <span class="musicast-palette-chip musicast-chip-gradient"><i class="bi bi-layers-fill"></i> Cards con gradientes</span>
+            </div>
+
+            <a href="./musicast.php" target="_blank" rel="noopener"
+               style="display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:999px; font-weight:700; font-size:0.97rem; background:linear-gradient(135deg,#d4a017,#e07b30); color:#0a0a0f; text-decoration:none; box-shadow:0 12px 35px rgba(212,160,23,0.35); transition:transform 0.2s,box-shadow 0.2s;"
+               onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 18px 45px rgba(212,160,23,0.45)';"
+               onmouseout="this.style.transform='';this.style.boxShadow='0 12px 35px rgba(212,160,23,0.35)';">
+              </i> DEMO MUSICAST
+            </a>
+
+            <a href="./musicast2.php" target="_blank" rel="noopener"
+               style="display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:999px; font-weight:700; font-size:0.97rem; background:linear-gradient(135deg,#d4a017,#e07b30); color:#0a0a0f; text-decoration:none; box-shadow:0 12px 35px rgba(212,160,23,0.35); transition:transform 0.2s,box-shadow 0.2s;"
+               onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 18px 45px rgba(212,160,23,0.45)';"
+               onmouseout="this.style.transform='';this.style.boxShadow='0 12px 35px rgba(212,160,23,0.35)';">
+              </i> DEMO MUSICAST 2DA FASE
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="musicast-glow-line"></div>
+    </section>
+    <!-- ══════════════ END MUSICAST ══════════════ -->
 
     <section class="section program-process dark-background">
       <div class="container section-title" data-aos="fade-up">
