@@ -1435,6 +1435,13 @@ $solutionCount = count($solutions);
                onmouseout="this.style.transform='';this.style.boxShadow='0 12px 35px rgba(212,160,23,0.35)';">
               </i> DEMO MUSICAST 3RA FASE
             </a>
+
+            <a href="./musicast4.php" target="_blank" rel="noopener"
+               style="display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:999px; font-weight:700; font-size:0.97rem; background:linear-gradient(135deg,#d4a017,#e07b30); color:#0a0a0f; text-decoration:none; box-shadow:0 12px 35px rgba(212,160,23,0.35); transition:transform 0.2s,box-shadow 0.2s;"
+               onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 18px 45px rgba(212,160,23,0.45)';"
+               onmouseout="this.style.transform='';this.style.boxShadow='0 12px 35px rgba(212,160,23,0.35)';">
+              </i> DEMO MUSICAST 4TA FASE
+            </a>
           </div>
 
         </div>
